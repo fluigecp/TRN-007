@@ -30,6 +30,7 @@
 			<!-- FORM CONTROLLERS -->
 			<input type="hidden" name="numProcess" id="numProcess" />
 			<input type="hidden" name="campoDescritor" id="campoDescritor" />
+			<input type="hidden" name="aberturaAutomatica" id="aberturaAutomatica" />
 
 			<!-- ANALYTICS -->
 			<input type="hidden" name="custom_0" id="custom_0">
@@ -76,9 +77,222 @@
 			<!-- FIM ANALYTICS -->
 
 			<!-- FIM FORMCONTROLERS -->
-			
+
 			<!-- Form -->
-			
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-field" data-type="textbox" data-show-properties="" data-field-name="nomeCurso">
+						<div class="form-input">
+							<div class="form-group">
+								<label for="nomeCurso">Curso</label>
+								<strong>*</strong>
+								<input type="text" id="nomeCurso" name="nomeCurso" class="form-control">
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-3">							
+					<div class="form-field" data-type="textbox" data-show-properties="" data-field-name="data1">
+						<div class="form-input">
+							<div class="form-group">
+								<label for="data3">Data início</label>
+								<input type="text" id="data1" name="data1" data-date-hour="date" class="form-control" mask="00/00/0000">
+								<span class="input-group-addon sp-clear btn-danger" style="border-radius: 4px; cursor:pointer;" value="">
+								<span class="fluigicon-calendar-remove fluigicon sp-clear">&nbsp;Limpar</span>
+							</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">							
+					<div class="form-field" data-type="textbox" data-show-properties="" data-field-name="data2">
+						<div class="form-input">
+							<div class="form-group">
+								<label for="data3">Data término</label>
+								<input type="text" id="data2" name="data2" data-date-hour="date" class="form-control" mask="00/00/0000">
+								<span class="input-group-addon sp-clear btn-danger" style="border-radius: 4px; cursor:pointer;" value="">
+								<span class="fluigicon-calendar-remove fluigicon sp-clear">&nbsp;Limpar</span>
+							</span>
+							</div>
+						</div>
+					</div>
+				</div>	
+
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-field" data-type="textbox" data-show-properties="" data-field-name="nomeParticipante">
+						<div class="form-input">
+							<div class="form-group">
+								<label for="nomeParticipante">Participante</label>
+								<strong>*</strong>
+								<input type="text" id="nomeParticipante" name="nomeParticipante" class="form-control">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-field" data-type="textbox" data-show-properties="" data-field-name="matParticipante">
+						<div class="form-input">
+							<div class="form-group">
+								<label for="matParticipante">Matrícula</label>
+								<strong>*</strong>
+								<input type="text" id="matParticipante" name="matParticipante" class="form-control">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-field" data-type="textbox" data-show-properties="" data-field-name="cargoParticipante">
+						<div class="form-input">
+							<div class="form-group">
+								<label for="cargoParticipante">Cargo</label>
+								<strong>*</strong>
+								<input type="text" id="cargoParticipante" name="cargoParticipante" class="form-control">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-field" data-type="textbox" data-show-properties="" data-field-name="lotacaoParticipante">
+						<div class="form-input">
+							<div class="form-group">
+								<label for="lotacaoParticipante">Lotação</label>
+								<strong>*</strong>
+								<input type="text" id="lotacaoParticipante" name="lotacaoParticipante" class="form-control">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-field" data-type="textbox" data-show-properties="" data-field-name="avaliadorTreinamento">
+						<div class="form-input">
+							<div class="form-group">
+								<label for="avaliadorTreinamento">Avaliador</label>
+								<strong>*</strong>
+								<input type="text" id="avaliadorTreinamento" name="avaliadorTreinamento" class="form-control">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-field" data-type="radio" data-show-properties="" data-field-name="pergunta1">
+						<div class="form-input">
+							<div class="form-group">
+								<label>1) O treinamento realizado atingiu os resultados esperados?</label>&nbsp;<strong>*</strong>
+								<div class="radio-options">
+									<div>
+										<label class="labelForRadio"><input name="pergunta1" id="pergunta1" type="radio" value="Sim"> Sim (100%)</label>
+									</div>
+									<div>
+										<label class="labelForRadio"><input name="pergunta1" id="pergunta1" type="radio" value="Parcialmente"> Parcialmente (50%)</label>
+									</div>
+									<div>
+										<label class="labelForRadio"><input name="pergunta1" id="pergunta1" type="radio" value="Não"> Não (menos de 50%)</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-field" data-type="textarea" data-show-properties="" data-field-name="justificativa2">
+						<div class="form-input">
+							<div class="form-group">
+								<label>Justifique para respostas Parcialmente (50%) e Não (menos de 50%)
+									<strong> *</strong>
+								</label>
+								<textarea name="justificativa2" id="justificativa2" style="resize: vertical" onkeyup="manipulateDOM.expandTextarea(this.id)"
+									class="form-control" rows="3" data-size="big" placeholder=""></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-field" data-type="radio" data-show-properties="" data-field-name="pergunta2">
+						<div class="form-input">
+							<div class="form-group">
+								<label>2) Qual percentual de aplicabilidade dos conceitos ou metodologias desse treinamento nas atividades rotineiras do participante?</label>&nbsp;<strong>*</strong>
+								<div class="radio-options">
+									<div>
+										<label class="labelForRadio"><input name="pergunta2" id="pergunta2" type="radio" value="aplicavel"> Aplicável (100% a 76%)</label>
+									</div>
+									<div>
+										<label class="labelForRadio"><input name="pergunta2" id="pergunta2" type="radio" value="parcialmente_aplicavel"> Parcialmente aplicável (75% a 51%) </label>
+									</div>
+									<div>
+										<label class="labelForRadio"><input name="pergunta2" id="pergunta2" type="radio" value="pouco_aplicavel"> Pouco aplicável (50% a 26%)</label>
+									</div>
+									<div>
+										<label class="labelForRadio"><input name="pergunta2" id="pergunta2" type="radio" value="nao_aplicavel"> Não aplicável (25% a 0%)</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-field" data-type="textarea" data-show-properties="" data-field-name="justificativa2">
+						<div class="form-input">
+							<div class="form-group">
+								<label>Justifique sua resposta
+									<strong> *</strong>
+								</label>
+								<textarea name="justificativa2" id="justificativa2" style="resize: vertical" onkeyup="manipulateDOM.expandTextarea(this.id)"
+									class="form-control" rows="3" data-size="big" placeholder=""></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-field" data-type="textarea" data-show-properties="" data-field-name="pergunta3">
+						<div class="form-input">
+							<div class="form-group">
+								<label>3) Descreva os resultados obtidos em relação a situação anterior x situação atual									
+									<strong> *</strong>
+								</label>
+								<textarea name="pergunta3" id="pergunta3" style="resize: vertical" onkeyup="manipulateDOM.expandTextarea(this.id)"
+									class="form-control" rows="3" data-size="big" placeholder=""></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row" style="margin-top: 30px;">
+				<div class="aprovarAvaliacaoContainer col-md-4">
+					<div class="form-field" data-type="radio" data-show-properties="" data-field-name="aprovarAvaliacao">
+						<div class="form-input">
+							<div class="form-group">
+								<label>Avaliação aprovada?</label>&nbsp;
+								<strong>*</strong>
+								<div class="radio-options">
+									<div class="radio-inline">
+										<label class="labelForRadio">
+											<input name="aprovarAvaliacao" id="aprovarAvaliacao" type="radio" value="Sim"> Sim </label>
+									</div>
+									<div class="radio-inline">
+										<label class="labelForRadio">
+											<input name="aprovarAvaliacao" id="aprovarAvaliacao" type="radio" value="Não"> Não</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			<!-- FIM - Form -->
 
 			<!-- HISTORICO -->
