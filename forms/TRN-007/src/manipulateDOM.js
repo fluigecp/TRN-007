@@ -22,6 +22,14 @@ var manipulateDOM = (function () {
             }
         },
 
+        /**
+         * @description Função listener para imprimir a avaliação.
+         */
+        printAvaliacaoListener: function(event) {
+            event.preventDefault();
+            printModule.print();
+        },
+
     };
 
     var zoomFields = {
