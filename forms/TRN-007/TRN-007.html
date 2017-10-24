@@ -105,7 +105,7 @@
 					<div class="form-field" data-type="textbox" data-show-properties="" data-field-name="data1">
 						<div class="form-input">
 							<div class="form-group">
-								<label for="data3">Data início</label>
+								<label for="data1">Data início <strong>*</strong></label>
 								<input type="text" id="data1" name="data1" data-date-hour="date" class="form-control" mask="00/00/0000">
 								<span class="input-group-addon sp-clear btn-danger" style="border-radius: 4px; cursor:pointer;" value="">
 								<span class="fluigicon-calendar-remove fluigicon sp-clear">&nbsp;Limpar</span>
@@ -118,7 +118,7 @@
 					<div class="form-field" data-type="textbox" data-show-properties="" data-field-name="data2">
 						<div class="form-input">
 							<div class="form-group">
-								<label for="data3">Data término</label>
+								<label for="data2">Data término <strong>*</strong></label>
 								<input type="text" id="data2" name="data2" data-date-hour="date" class="form-control" mask="00/00/0000">
 								<span class="input-group-addon sp-clear btn-danger" style="border-radius: 4px; cursor:pointer;" value="">
 								<span class="fluigicon-calendar-remove fluigicon sp-clear">&nbsp;Limpar</span>
@@ -162,7 +162,14 @@
 							<div class="form-group">
 								<label for="cargoParticipante">Cargo</label>
 								<strong>*</strong>
-								<input type="text" id="cargoParticipante" name="cargoParticipante" class="form-control">
+								<input name="cargoParticipante" id="cargoParticipante" class="form-control" type="zoom" data-zoom="{
+									'displayKey':'cargo',
+									'datasetId':'dsCargos',
+									'fields':[
+										{'field':'idCargo', 'label':'ID', 'standard':'true'},
+										{'field':'cargo', 'label':'Cargo'}
+										]
+								}">
 							</div>
 						</div>
 					</div>
@@ -173,7 +180,14 @@
 							<div class="form-group">
 								<label for="lotacaoParticipante">Lotação</label>
 								<strong>*</strong>
-								<input type="text" id="lotacaoParticipante" name="lotacaoParticipante" class="form-control">
+								<input name="lotacaoParticipante" id="lotacaoParticipante" class="form-control" type="zoom" data-zoom="{
+									'displayKey':'lotacao',
+									'datasetId':'cadastro_lotacao',
+									'fields':[
+										{'field':'id', 'label':'ID', 'standard':'true'},
+										{'field':'lotacao', 'label':'Lotação'}
+										]
+								}">
 							</div>
 						</div>
 					</div>
@@ -386,6 +400,7 @@
 	<script type="text/javascript" src="validacao.js"></script>
 	<script type="text/javascript" src="formValidate.js"></script>
 	<!-- MODULES -->
+	<script type="text/javascript" src="src/dateFunctions.js"></script>
 	<script type="text/javascript" src="src/manipulateDOM.js"></script>
 	<script type="text/javascript" src="src/print.js"></script>
 	<script type="text/javascript" src="src/lifecycle.js"></script>

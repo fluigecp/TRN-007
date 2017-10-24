@@ -22,7 +22,10 @@
         $(".expand").on("click ", manipulateDOM.actions4Listeners.expandTextAreaListener);
         
         /** Início - Life Cycle */
-
+        if ( activity == 0 || activity == 3 || activity == 9 ) {
+            //manipulateDOM.initMasks();
+            manipulateDOM.initCalendar('input[data-date-hour]');
+        }
         /** Modo VIEW  */
 
         if ( modo == "VIEW" ) {

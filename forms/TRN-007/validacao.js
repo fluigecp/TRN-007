@@ -1,40 +1,28 @@
 function validaCampos(atividade, proximaAtividade) {
 	/** Life Cycle Workflow */
-	
-	if ( atividade == 0 || atividade == 4 || atividade == 26 || atividade == 31 ) {
-		//addHasFree('fieldName');
-		//addHasFreeTable('fieldType', 'fieldName', 1);
+
+	if (atividade == 0 || atividade == 3 || atividade == 9) {
+		addHasFree("nomeCurso");
+		addHasFree("data1");
+		addHasFree("data2");
 		addHasFree("nomeParticipante");
-		addHasFree("matricula");
-		addHasFree("area");
-		addHasFree("cursoTreinamento");
-		addHasFree("classificacaoCurso");
-		addHasFree("instituicao");
-		addHasFree("dataRealizacao");
-		addHasFree("cargaHoraria");
+		addHasFree("matParticipante");
+		addHasFree("cargoParticipante");
+		addHasFree("lotacaoParticipante");
 		addHasFree("avaliadorTreinamento");
-		if ( atividade == 31 ){
-			addHasFree("usuarioParticipou");
-		}
 	}
 
-	if ( atividade == 8 ) {
+	if (atividade != 0 && atividade != 3 && atividade != 9) {
+		addHasFree('pergunta1');
+		addHasFree('justificativa1');
+		addHasFree('pergunta2');
+		addHasFree('justificativa2');
+		addHasFree('pergunta3');
+	}
+
+	if (atividade == 4) {
 		addHasFree("aprovarAvaliacao");
 	}
 
-	if ( atividade == 26 ) {
-
-		addHasFree("pergunta1");
-		addHasFree("pergunta2");
-		addHasFree("pergunta3_organizacao");
-		addHasFree("pergunta3_cargaHoraria");
-		addHasFree("pergunta3_material");
-		addHasFree("pergunta3_local");
-		addHasFree("pergunta4_comunicacao");
-		addHasFree("pergunta4_dominio");
-		addHasFree("pergunta4_relacionamento");
-		addHasFree("pergunta4_didatica");
-		addHasFree("pergunta4_habilidade");
-	}
 	/** Fim Life Cycle Workflow */
 }

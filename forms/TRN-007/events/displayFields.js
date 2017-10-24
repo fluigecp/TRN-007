@@ -40,6 +40,10 @@ function displayFields(form, customHTML) {
 		customHTML.append('</script>');
 	}
 
+	if (activity != 4) {
+		ocultaClasse("aprovarAvaliacaoContainer");
+	}
+
 	/** Lifecycle */
 	
 	
