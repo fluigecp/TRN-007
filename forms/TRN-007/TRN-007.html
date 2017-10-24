@@ -80,6 +80,15 @@
 
 			<!-- Form -->
 			<div class="row">
+				<div class="col-md-12">
+					<div class="container-text">
+						Este questionário tem como objetivo identificar os resultados pós treinamento. 
+						Responda todas as questões, conforme instruções abaixo.
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
 				<div class="col-md-6">
 					<div class="form-field" data-type="textbox" data-show-properties="" data-field-name="nomeCurso">
 						<div class="form-input">
@@ -178,10 +187,46 @@
 							<div class="form-group">
 								<label for="avaliadorTreinamento">Avaliador</label>
 								<strong>*</strong>
-								<input type="text" id="avaliadorTreinamento" name="avaliadorTreinamento" class="form-control">
+								<input name="avaliadorTreinamento" id="avaliadorTreinamento" class="form-control" type="zoom" data-zoom="{
+									'displayKey':'colleagueName',
+									'datasetId':'colleague',
+									'fields':[
+										{'field':'colleagueId', 'label':'Matrícula', 'standard':'true'},
+										{'field':'colleagueName', 'label':'Nome'}
+										]
+								}">
 							</div>
 						</div>
 					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="container-text">
+						Conteúdo Programático:
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="container-text-2">
+						<ol>
+							<li>O fluxo completo de concepção do plano de projeto em co-criação com os stakeholders.</li>
+							<li>O entendimento da geração de valor do projeto para a organização. 	</li>
+							<li>Quais produtos/serviços/resultados o projeto está entregando? Quais são suas características diferenciadas que atendem às necessidades do cliente do projeto?</li>
+							<li>Quem, da organização, dedicar-se-á ao projeto e por quanto tempo? Com quais órgãos do ambiente externo ao projeto teremos que lidar?</li>
+							<li>Qual trabalho, com foco em resultado, cada um tem que produzir? Em quais condições ese trabalho pode e deve ser feito?</li>
+							<li>Em que prazo/custo podemos nos comprometer considerando os principais riscos?</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="container-text">Instruções de Preenchimento: Avaliador e avaliado devem realizar o procedimento em conjunto para análise e definição consensual.</div>
 				</div>
 			</div>
 
@@ -205,13 +250,13 @@
 							</div>
 						</div>
 					</div>
-					<div class="form-field" data-type="textarea" data-show-properties="" data-field-name="justificativa2">
+					<div class="form-field" data-type="textarea" data-show-properties="" data-field-name="justificativa1">
 						<div class="form-input">
 							<div class="form-group">
 								<label>Justifique para respostas Parcialmente (50%) e Não (menos de 50%)
 									<strong> *</strong>
 								</label>
-								<textarea name="justificativa2" id="justificativa2" style="resize: vertical" onkeyup="manipulateDOM.expandTextarea(this.id)"
+								<textarea name="justificativa1" id="justificativa1" style="resize: vertical" onkeyup="manipulateDOM.expandTextarea(this.id)"
 									class="form-control" rows="3" data-size="big" placeholder=""></textarea>
 							</div>
 						</div>
