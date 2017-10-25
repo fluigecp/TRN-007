@@ -211,19 +211,19 @@ var printModule = (function(){
 
             '       <div class="row">'+
                 '        <div class="col-md-12">'+
-                '            <div class="form-field" data-type="radio" data-show-properties="" data-field-name="pergunta1">'+
+                '            <div class="form-field" data-type="checkbox" data-show-properties="" data-field-name="pergunta1">'+
                 '                <div class="form-input">'+
                 '                    <div class="form-group">'+
-                '                        <label>1) O treinamento realizado atingiu os resultados esperados?</label>&nbsp;<strong>*</strong>'+
+                '                        <label>1) O treinamento realizado atingiu os resultados esperados?</label>&nbsp;'+
                 '                        <div class="radio-options">'+
                 '                            <div>'+
-                '                                <label class="labelForRadio"><input name="pergunta1" id="pergunta1" type="radio" value="Sim"> Sim (100%)</label>'+
+                '                                <label class="labelForRadio"><input name="pergunta1" id="pergunta1" type="checkbox" value="Sim"> Sim (100%)</label>'+
                 '                            </div>'+
                 '                            <div>'+
-                '                                <label class="labelForRadio"><input name="pergunta1" id="pergunta1" type="radio" value="Parcialmente"> Parcialmente (50%)</label>'+
+                '                                <label class="labelForRadio"><input name="pergunta1" id="pergunta1" type="checkbox" value="Parcialmente"> Parcialmente (50%)</label>'+
                 '                            </div>'+
                 '                            <div>'+
-                '                                <label class="labelForRadio"><input name="pergunta1" id="pergunta1" type="radio" value="Não"> Não (menos de 50%)</label>'+
+                '                                <label class="labelForRadio"><input name="pergunta1" id="pergunta1" type="checkbox" value="Não"> Não (menos de 50%)</label>'+
                 '                            </div>'+
                 '                        </div>'+
                 '                    </div>'+
@@ -233,10 +233,8 @@ var printModule = (function(){
                 '               <div class="form-input">'+
                 '                   <div class="form-group">'+
                 '                       <label>Justifique para respostas Parcialmente (50%) e Não (menos de 50%)'+
-                '                           <strong> *</strong>'+
                 '                       </label>'+
-                '                       <textarea name="justificativa1" id="justificativa1" style="resize: vertical" onkeyup="manipulateDOM.expandTextarea(this.id)"'+
-                '                           class="form-control" rows="3" data-size="big" placeholder=""></textarea>'+
+                '                       <div style="padding-top: 70px;"></div>'+
                 '                   </div>'+
                 '               </div>'+
                 '           </div>'+
@@ -245,22 +243,22 @@ var printModule = (function(){
 
             '       <div class="row">'+
                 '           <div class="col-md-12">'+
-                '               <div class="form-field" data-type="radio" data-show-properties="" data-field-name="pergunta2">'+
+                '               <div class="form-field" data-type="checkbox" data-show-properties="" data-field-name="pergunta2">'+
                 '                   <div class="form-input">'+
                 '                       <div class="form-group">'+
-                '                           <label>2) Qual percentual de aplicabilidade dos conceitos ou metodologias desse treinamento nas atividades rotineiras do participante?</label>&nbsp;<strong>*</strong>'+
+                '                           <label>2) Qual percentual de aplicabilidade dos conceitos ou metodologias desse treinamento nas atividades rotineiras do participante?</label>&nbsp;'+
                 '                           <div class="radio-options">'+
                 '                               <div>'+
-                '                                   <label class="labelForRadio"><input name="pergunta2" id="pergunta2" type="radio" value="aplicavel"> Aplicável (100% a 76%)</label>'+
+                '                                   <label class="labelForRadio"><input name="pergunta2" id="pergunta2" type="checkbox" value="aplicavel"> Aplicável (100% a 76%)</label>'+
                 '                               </div>'+
                 '                               <div>'+
-                '                                   <label class="labelForRadio"><input name="pergunta2" id="pergunta2" type="radio" value="parcialmente_aplicavel"> Parcialmente aplicável (75% a 51%) </label>'+
+                '                                   <label class="labelForRadio"><input name="pergunta2" id="pergunta2" type="checkbox" value="parcialmente_aplicavel"> Parcialmente aplicável (75% a 51%) </label>'+
                 '                               </div>'+
                 '                               <div>'+
-                '                                   <label class="labelForRadio"><input name="pergunta2" id="pergunta2" type="radio" value="pouco_aplicavel"> Pouco aplicável (50% a 26%)</label>'+
+                '                                   <label class="labelForRadio"><input name="pergunta2" id="pergunta2" type="checkbox" value="pouco_aplicavel"> Pouco aplicável (50% a 26%)</label>'+
                 '                               </div>'+
                 '                               <div>'+
-                '                                   <label class="labelForRadio"><input name="pergunta2" id="pergunta2" type="radio" value="nao_aplicavel"> Não aplicável (25% a 0%)</label>'+
+                '                                   <label class="labelForRadio"><input name="pergunta2" id="pergunta2" type="checkbox" value="nao_aplicavel"> Não aplicável (25% a 0%)</label>'+
                 '                               </div>'+
                 '                           </div>'+
                 '                       </div>'+
@@ -271,8 +269,7 @@ var printModule = (function(){
                 '                       <div class="form-group">'+
                 '                           <label>Justifique sua resposta'+
                 '                           </label>'+
-                '                           <textarea name="justificativa2" id="justificativa2" style="resize: vertical" onkeyup="manipulateDOM.expandTextarea(this.id)"'+
-                '                               class="form-control" rows="3" data-size="big" placeholder=""></textarea>'+
+                '                           <div style="padding-top: 65px;"></div>'+
                 '                       </div>'+
                 '                   </div>'+
                 '               </div>'+
@@ -286,13 +283,40 @@ var printModule = (function(){
                 '                       <div class="form-group">'+
                 '                           <label>3) Descreva os resultados obtidos em relação a situação anterior x situação atual'+
                 '                           </label>'+
-                '                           <textarea name="pergunta3" id="pergunta3" style="resize: vertical" onkeyup="manipulateDOM.expandTextarea(this.id)"'+
-                '                               class="form-control" rows="3" data-size="big" placeholder=""></textarea>'+
+                '                           <div style="padding-top: 65px;"></div>'+
                 '                       </div>'+
                 '                   </div>'+
                 '               </div>'+
                 '           </div>'+
+            '       </div>'+
+
+            '       <div class="row">'+
+                '               <div class="col-md-12">'+
+                '                   <table style=" text-align: center;">'+
+                '                       <th>'+
+                '                           <tr>'+
+                '                               <td style="width: 14%;">Participante</td>'+
+                '                                   <td style="width: 14%">Avaliador</td>'+
+                '                                   <td style="width: 14%">Responsável pelo departamento</td>'+
+                '                                   <td style="width: 14%">Recursos Humanos</td>'+
+                '                           </tr>'+
+                '                       </th>'+
+                '                       <tr>'+
+                '                         <td><br/>________________________<br/>assinatura</td>'+
+                '                         <td><br/>________________________<br/>assinatura</td>'+
+                '                         <td><br/>________________________<br/>assinatura</td>'+
+                '                         <td><br/>________________________<br/>assinatura</td>'+
+                '                       </tr>'+
+                '                       <tr>'+
+                '                         <td>__/__/____</td>'+
+                '                         <td>__/__/____</td>'+
+                '                         <td>__/__/____</td>'+
+                '                         <td>__/__/____</td>'+
+                '                       </tr>'+
+                '                   </table>'+
+                '               </div>'+
             '       </div>';
+
             dvDados.innerHTML = html;
             dvDados.id = 'aprovacaoEficaciaForm';
             var page = myWindow.document.createElement("page");
