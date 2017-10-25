@@ -31,6 +31,9 @@
 			<input type="hidden" name="numProcess" id="numProcess" />
 			<input type="hidden" name="campoDescritor" id="campoDescritor" />
 			<input type="hidden" name="aberturaAutomatica" id="aberturaAutomatica" />
+			<input type="hidden" name="numSolicTreinamento" id="numSolicTreinamento" />
+			<input type="hidden" name="solicAvaliacaoReacao" id="solicAvaliacaoReacao" />
+			<input type="hidden" name="avaliadorMat" id="avaliadorMat" />
 
 			<!-- ANALYTICS -->
 			<input type="hidden" name="custom_0" id="custom_0">
@@ -368,6 +371,30 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="row" style="margin-top: 30px;">
+				<div class="verificarParticipacaoContainer col-md-4">
+					<div class="form-field" data-type="radio" data-show-properties="" data-field-name="usuarioParticipou">
+						<div class="form-input">
+							<div class="form-group">
+								<label>Participou do treinamento?</label>&nbsp;
+								<strong>*</strong>
+								<div class="radio-options">
+									<div class="radio-inline">
+										<label class="label-for-radio">
+											<input name="usuarioParticipou" id="usuarioParticipou" type="radio" value="Sim"> Sim </label>
+									</div>
+									<div class="radio-inline">
+										<label class="label-for-radio">
+											<input name="usuarioParticipou" id="usuarioParticipou" type="radio" value="Não"> Não, cancelar avaliação</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<!-- FIM - Form -->
 
 			<!-- HISTORICO -->

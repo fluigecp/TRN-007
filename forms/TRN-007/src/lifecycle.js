@@ -27,6 +27,13 @@
         }
 
         if ( activity == 7 ) {
+            var aberturaAutomatica = $("#aberturaAutomatica").val();
+            if ( aberturaAutomatica == "Sim" ) {
+                var numSolicAvaliacaoReacao = $("#solicAvaliacaoReacao").val();
+                var numSolicTreinamento = $("#numSolicTreinamento").val();
+                $("#btnShowAvaliacaoReacao").on("click", { numSolic: numSolicAvaliacaoReacao }, manipulateDOM.actions4Listeners.showSolicitacaoListener);
+                $("#btnShowTreinamento").on("click", { numSolic: numSolicTreinamento },  manipulateDOM.actions4Listeners.showSolicitacaoListener);
+            }
             $("#btnPrint").on("click", manipulateDOM.actions4Listeners.printAvaliacaoListener);
         }
         /** Modo VIEW  */

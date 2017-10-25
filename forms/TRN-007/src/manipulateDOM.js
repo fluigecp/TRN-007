@@ -30,11 +30,25 @@ var manipulateDOM = (function () {
             printModule.print();
         },
 
+        /**
+         * @description Função listener para abrir uma solicitação pelo seu código.
+         */
+        showSolicitacaoListener: function(event, numSolic) {
+            event.preventDefault();
+            if (numSolic != "" && numSolic != undefined && numSolic != null) {
+                var htmlRef = "/portal/p/1/pageworkflowview?app_ecm_workflowview_detailsProcessInstanceID=" + numSolic;
+                window.open(htmlRef, "_blank");
+            }
+        }
+
     };
 
     var zoomFields = {
         eventZoom: function (selectedItem) {
-            
+            if (selectedItem.inputName == 'avaliadorTreinamento') {
+                $("#avaliadorMat").val(selectedItem.colleagueId);
+            }
+
         }
     }
     /**

@@ -44,6 +44,25 @@ function displayFields(form, customHTML) {
 		ocultaClasse("aprovarAvaliacaoContainer");
 	}
 
+	if ( activity != 0 && activity != 3 && activity != 9) {
+		ocultaClasse("verificarParticipacaoContainer");
+	}
+
+	if ( activity == 7 ) {
+		if ( form.getValue("aberturaAutomatica") == "Sim" ) {
+			ocultaId("btnShowAvaliacaoReacao");
+			ocultaId("btnShowTreinamento");
+		}
+	}
+
+	
+	if ( activity == 0 || activity == 3 || activity == 9) {
+		ocultaClasse("verificarParticipacaoContainer");
+		if ( form.getValue("aberturaAutomatica") == "Sim" ) {
+			ocultaId("btnShowAvaliacaoReacao");
+			ocultaId("btnShowTreinamento");
+		}
+	}
 	/** Lifecycle */
 	
 	

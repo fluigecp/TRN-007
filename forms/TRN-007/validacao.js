@@ -10,6 +10,7 @@ function validaCampos(atividade, proximaAtividade) {
 		addHasFree("cargoParticipante");
 		addHasFree("lotacaoParticipante");
 		addHasFree("avaliadorTreinamento");
+		addHasFree("usuarioParticipou");
 	}
 
 	if (atividade != 0 && atividade != 3 && atividade != 9) {
