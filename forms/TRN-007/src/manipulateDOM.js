@@ -33,8 +33,9 @@ var manipulateDOM = (function () {
         /**
          * @description Função listener para abrir uma solicitação pelo seu código.
          */
-        showSolicitacaoListener: function(event, numSolic) {
+        showSolicitacaoListener: function(event) {
             event.preventDefault();
+            var numSolic = event.data.numSolic;
             if (numSolic != "" && numSolic != undefined && numSolic != null) {
                 var htmlRef = "/portal/p/1/pageworkflowview?app_ecm_workflowview_detailsProcessInstanceID=" + numSolic;
                 window.open(htmlRef, "_blank");

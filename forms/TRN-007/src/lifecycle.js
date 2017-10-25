@@ -26,7 +26,7 @@
             manipulateDOM.initCalendar('input[data-date-hour]');
         }
 
-        if ( activity == 7 ) {
+        if ( activity == 0 || activity == 3 || activity == 4 || activity == 6 || activity == 7 || activity == 9 ) {
             var aberturaAutomatica = $("#aberturaAutomatica").val();
             if ( aberturaAutomatica == "Sim" ) {
                 var numSolicAvaliacaoReacao = $("#solicAvaliacaoReacao").val();

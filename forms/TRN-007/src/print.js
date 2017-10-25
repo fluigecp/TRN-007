@@ -37,9 +37,9 @@ var printModule = (function(){
         dataFim = modo == "VIEW" ? $("span[name*=data2]").html() : $("input[name*=data2]").val();
         nomeParticipante = modo == "VIEW" ? $("span[name*=nomeParticipante]").html() : $("input[name*=nomeParticipante]").val();
         matParticipante = modo == "VIEW" ? $("span[name*=matParticipante]").html() : $("input[name*=matParticipante]").val();
-        cargoParticipante = modo == "VIEW" ? $("span[name*=cargoParticipante]").html() : $("#cargoParticipante").val()[0];
-        lotacaoParticipante = modo == "VIEW" ? $("span[name*=lotacaoParticipante]").html() : $("#lotacaoParticipante").val()[0];
-        avaliadorTreinamento = modo == "VIEW" ? $("span[name*=avaliadorTreinamento]").html() : $("#avaliadorTreinamento").val()[0];
+        cargoParticipante = modo == "VIEW" ? $("span[name*=cargoParticipante]").html() : $("#cargoParticipante").val();
+        lotacaoParticipante = modo == "VIEW" ? $("span[name*=lotacaoParticipante]").html() : $("#lotacaoParticipante").val();
+        avaliadorTreinamento = modo == "VIEW" ? $("span[name*=avaliadorTreinamento]").html() : $("#avaliadorTreinamento").val();
         formObj = {
             "nomeCurso":nomeCurso,
             "dataInicio": dataInicio,
@@ -234,7 +234,7 @@ var printModule = (function(){
                 '                   <div class="form-group">'+
                 '                       <label>Justifique para respostas Parcialmente (50%) e Não (menos de 50%)'+
                 '                       </label>'+
-                '                       <div style="padding-top: 70px;"></div>'+
+                '                       <div style="padding-top: 100px;"></div>'+
                 '                   </div>'+
                 '               </div>'+
                 '           </div>'+
@@ -269,7 +269,7 @@ var printModule = (function(){
                 '                       <div class="form-group">'+
                 '                           <label>Justifique sua resposta'+
                 '                           </label>'+
-                '                           <div style="padding-top: 65px;"></div>'+
+                '                           <div style="padding-top: 100px;"></div>'+
                 '                       </div>'+
                 '                   </div>'+
                 '               </div>'+
@@ -283,7 +283,7 @@ var printModule = (function(){
                 '                       <div class="form-group">'+
                 '                           <label>3) Descreva os resultados obtidos em relação a situação anterior x situação atual'+
                 '                           </label>'+
-                '                           <div style="padding-top: 65px;"></div>'+
+                '                           <div style="padding-top: 100px;"></div>'+
                 '                       </div>'+
                 '                   </div>'+
                 '               </div>'+

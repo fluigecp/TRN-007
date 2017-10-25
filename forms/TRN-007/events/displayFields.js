@@ -49,7 +49,7 @@ function displayFields(form, customHTML) {
 	}
 
 	if ( activity == 7 ) {
-		if ( form.getValue("aberturaAutomatica") == "Sim" ) {
+		if ( form.getValue("aberturaAutomatica") != "Sim" ) {
 			ocultaId("btnShowAvaliacaoReacao");
 			ocultaId("btnShowTreinamento");
 		}
@@ -58,10 +58,14 @@ function displayFields(form, customHTML) {
 	
 	if ( activity == 0 || activity == 3 || activity == 9) {
 		ocultaClasse("verificarParticipacaoContainer");
-		if ( form.getValue("aberturaAutomatica") == "Sim" ) {
+		if ( form.getValue("aberturaAutomatica") != "Sim" ) {
 			ocultaId("btnShowAvaliacaoReacao");
 			ocultaId("btnShowTreinamento");
 		}
+	}
+
+	if ( modo == "VIEW" ) {
+		form.setShowDisabledFields(false);
 	}
 	/** Lifecycle */
 	
