@@ -15,9 +15,10 @@ function validaCampos(atividade, proximaAtividade) {
 
 	if (atividade != 0 && atividade != 3 && atividade != 9) {
 		addHasFree('pergunta1');
-		addHasFree('justificativa1');
+		if ( getValue("pergunta1") != "Sim" ) {
+			addHasFree('justificativa1');
+		}
 		addHasFree('pergunta2');
-		addHasFree('justificativa2');
 		addHasFree('pergunta3');
 	}
 
