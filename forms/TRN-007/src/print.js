@@ -31,12 +31,13 @@ var printModule = (function(){
 
     var getData = function () {
        var formObj, nomeCurso, dataInicio, dataFim, nomeParticipante,
-             matParticipante, cargoParticipante, lotacaoParticipante, avaliadorTreinamento;
+             matParticipante, conteudoProgramatico, cargoParticipante, lotacaoParticipante, avaliadorTreinamento;
         nomeCurso = modo == "VIEW" ? $("span[name*=nomeCurso]").html() : $("input[name*=nomeCurso]").val();
         dataInicio = modo == "VIEW" ? $("span[name*=data1]").html() : $("input[name*=data1]").val();
         dataFim = modo == "VIEW" ? $("span[name*=data2]").html() : $("input[name*=data2]").val();
         nomeParticipante = modo == "VIEW" ? $("span[name*=nomeParticipante]").html() : $("input[name*=nomeParticipante]").val();
         matParticipante = modo == "VIEW" ? $("span[name*=matParticipante]").html() : $("input[name*=matParticipante]").val();
+        conteudoProgramatico = modo == "VIEW" ? $("span[name*=conteudoProgramatico]").html() : $("textarea[name*=conteudoProgramatico]").val();
         cargoParticipante = modo == "VIEW" ? $("span[name*=cargoParticipante]").html() : $("#cargoParticipante").val();
         lotacaoParticipante = modo == "VIEW" ? $("span[name*=lotacaoParticipante]").html() : $("#lotacaoParticipante").val();
         avaliadorTreinamento = modo == "VIEW" ? $("span[name*=avaliadorTreinamento]").html() : $("#avaliadorTreinamento").val();
@@ -46,6 +47,7 @@ var printModule = (function(){
             "dataFim": dataFim,
             "nomeParticipante": nomeParticipante,
             "matParticipante": matParticipante,
+            "conteudoProgramatico": conteudoProgramatico.replace(/\n/g, '<br>'),
             "cargoParticipante": cargoParticipante,
             "lotacaoParticipante": lotacaoParticipante,
             "avaliadorTreinamento": avaliadorTreinamento
@@ -190,15 +192,8 @@ var printModule = (function(){
 
             '       <div class="row">'+
                 '       <div class="col-md-12">'+
-                '           <div class="container-text-2">'+
-                '               <ol>'+
-                '                  <li>O fluxo completo de concepção do plano de projeto em co-criação com os stakeholders.</li>'+
-                '                  <li>O entendimento da geração de valor do projeto para a organização. 	</li>'+
-                '                  <li>Quais produtos/serviços/resultados o projeto está entregando? Quais são suas características diferenciadas que atendem às necessidades do cliente do projeto?</li>'+
-                '                  <li>Quem, da organização, dedicar-se-á ao projeto e por quanto tempo? Com quais órgãos do ambiente externo ao projeto teremos que lidar?</li>'+
-                '                  <li>Qual trabalho, com foco em resultado, cada um tem que produzir? Em quais condições ese trabalho pode e deve ser feito?</li>'+
-                '                  <li>Em que prazo/custo podemos nos comprometer considerando os principais riscos?</li>'+
-                '              </ol>'+
+                '           <div class="container-text-2" style="padding-left: 10px;">'+
+                                list.conteudoProgramatico +
                 '          </div>'+
                 '      </div>'+
             '      </div>'+

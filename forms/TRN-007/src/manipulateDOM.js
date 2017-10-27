@@ -51,7 +51,28 @@ var manipulateDOM = (function () {
             }
 
         }
-    }
+    };
+
+    var enablePopOvers = function () {
+        FLUIGC.popover('.bs-docs-popover-hover', {
+            trigger: 'hover',
+            placement: 'auto'
+        });
+    };
+
+    var expandTextarea = function (id) {
+        var element = document.getElementById(id);
+        if (element.scrollHeight != null) {
+            var altura = element.scrollHeight + 'px';
+            $(element).animate({
+                overflow: 'hidden',
+                height: 0,
+                height: altura
+            });
+        }
+    };
+
+
     /**
     * @description expande textarea do histórico
     * @param id id do campo
@@ -61,7 +82,7 @@ var manipulateDOM = (function () {
         if (objTextArea.scrollHeight > objTextArea.offsetHeight) {
             objTextArea.rows += 1
         }
-    }
+    };
     /**
     * @description Mostra o histórico completo
     */
@@ -69,14 +90,14 @@ var manipulateDOM = (function () {
         var historico = "historico"
         document.getElementById(historico).style.display = "inline"
         expandTextarea(historico)
-    }
+    };
     /**
      * @description Inicia as máscaras em todos os elementos da DOM que possuem o atributo 'mask'
     */
     var initMasks = function () {
         var inputs = $("[mask]")
         MaskEvent.initMask(inputs)
-    }
+    };
 
         /**
      * @description Inicia o calendário em um objeto na DOM
@@ -93,7 +114,7 @@ var manipulateDOM = (function () {
         $("span.sp-clear").on("click", function (event) {
             $(this).closest(".form-group").find("input").val("").change()
         })
-    }
+    };
 
     return {
         actions4Listeners: actions4Listeners,
@@ -101,6 +122,8 @@ var manipulateDOM = (function () {
         mostraHistorico: mostraHistorico,
         zoomFields: zoomFields,
         initMasks: initMasks,
-        initCalendar: initCalendar
+        initCalendar: initCalendar,
+        enablePopOvers: enablePopOvers,
+        expandTextarea: expandTextarea
     }
 })();

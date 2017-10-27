@@ -2,7 +2,7 @@ function enableFields(form) {
     var activity = getValue('WKNumState');
 
     /** Life Cycle */
-    if ( activity == 0 || activity == 3 || activity == 9 ){
+    if ( activity == 0 || activity == 3 || activity == 4 || activity == 9 ){
         form.setEnabled('pergunta1', false, true);
         form.setEnabled('justificativa1', false, true);
         form.setEnabled('pergunta2', false, true);
@@ -20,6 +20,7 @@ function enableFields(form) {
         form.setEnabled("lotacaoParticipante", false, true);
         form.setEnabled("avaliadorTreinamento", false, true);
         form.setEnabled("usuarioParticipou", false, true);
+        form.setEnabled("conteudoProgramatico", false, true);
     }
 
     /** FIM - Life Cycle */

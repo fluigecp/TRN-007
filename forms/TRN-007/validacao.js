@@ -11,6 +11,7 @@ function validaCampos(atividade, proximaAtividade) {
 		addHasFree("lotacaoParticipante");
 		addHasFree("avaliadorTreinamento");
 		addHasFree("usuarioParticipou");
+		addHasFree("conteudoProgramatico");
 	}
 
 	if (atividade != 0 && atividade != 3 && atividade != 9) {

@@ -34,6 +34,7 @@
                 $("#btnShowAvaliacaoReacao").on("click", { numSolic: numSolicAvaliacaoReacao }, manipulateDOM.actions4Listeners.showSolicitacaoListener);
                 $("#btnShowTreinamento").on("click", { numSolic: numSolicTreinamento },  manipulateDOM.actions4Listeners.showSolicitacaoListener);
             }
+            manipulateDOM.enablePopOvers();
             $("#btnPrint").on("click", manipulateDOM.actions4Listeners.printAvaliacaoListener);
         }
         /** Modo VIEW  */
