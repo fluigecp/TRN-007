@@ -44,28 +44,24 @@ function displayFields(form, customHTML) {
 		ocultaClasse("aprovarAvaliacaoContainer");
 	}
 
-	if ( activity != 0 && activity != 3 && activity != 9) {
+	if ( activity != 0 && activity != 3 && activity != 9 ) {
 		ocultaClasse("verificarParticipacaoContainer");
-	}
-
-	if ( activity == 7 ) {
-		if ( form.getValue("aberturaAutomatica") != "Sim" ) {
-			ocultaId("btnShowAvaliacaoReacao");
-			ocultaId("btnShowTreinamento");
-		}
+		ocultaClasse("input-group-addon .sp-clear .btn-dange");
 	}
 
 	
-	if ( activity == 0 || activity == 3 || activity == 9) {
-		ocultaClasse("verificarParticipacaoContainer");
+	if ( activity == 0 || activity == 3 || activity == 7 || activity == 9) {
 		if ( form.getValue("aberturaAutomatica") != "Sim" ) {
 			ocultaId("btnShowAvaliacaoReacao");
-			ocultaId("btnShowTreinamento");
+			if ( form.getValue("numSolicTreinamento") == "" ) {
+				ocultaId("btnShowTreinamento");
+			}
 		}
 	}
 
 	if ( modo == "VIEW" ) {
 		form.setShowDisabledFields(false);
+		ocultaClasse("btn-danger");
 	}
 	/** Lifecycle */
 	
