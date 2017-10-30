@@ -46,8 +46,20 @@ var manipulateDOM = (function () {
 
     var zoomFields = {
         eventZoom: function (selectedItem) {
-            if (selectedItem.inputName == 'avaliadorTreinamento') {
-                $("#avaliadorMat").val(selectedItem.colleagueId);
+
+            if (selectedItem.inputName == "aprovadorTreinamento") {
+                $("#aprovadorMat").val(selectedItem.colleagueId);
+            }
+
+            if (selectedItem.inputName == "avaliadorTreinamento") {
+                if ( $("#aberturaAutomatica") != "Sim") {
+                    var matricula = $("#matParticipante").val();
+                    if ( servicesModule.searchUserMat(matricula) ){
+                        $("#avaliadorMat").val(matricula);
+                    } else {
+                        $("#avaliadorMat").val(selectedItem.colleagueId);
+                    }
+                }
             }
 
         }

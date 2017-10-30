@@ -107,8 +107,8 @@
       <deadlineTime>0</deadlineTime>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
-      <engineAllocationId>Pool Grupo</engineAllocationId>
-      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;SGQ_Recursos_Humanos&lt;/Group&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <engineAllocationId>Campo Formulário</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;FormField&gt;aprovadorMat&lt;/FormField&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
       <selectColleague>0</selectColleague>
       <initialState>false</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
@@ -124,7 +124,7 @@
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
       <positionX>870</positionX>
-      <positionY>440</positionY>
+      <positionY>660</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -175,7 +175,7 @@
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
       <positionX>560</positionX>
-      <positionY>240</positionY>
+      <positionY>220</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -203,8 +203,8 @@
         <version>1</version>
         <sequence>9</sequence>
       </processStatePK>
-      <stateName>Atribuir avaliador</stateName>
-      <stateDescription>Atribuir avaliador</stateDescription>
+      <stateName>Atribuir avaliador e aprovador</stateName>
+      <stateDescription>Atribuir avaliador e aprovador</stateDescription>
       <instruction></instruction>
       <deadlineTime>0</deadlineTime>
       <joint>false</joint>
@@ -226,7 +226,7 @@
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
       <positionX>380</positionX>
-      <positionY>440</positionY>
+      <positionY>433</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -263,7 +263,7 @@
       <formFolder>0</formFolder>
       <automatic>true</automatic>
       <positionX>1070</positionX>
-      <positionY>424</positionY>
+      <positionY>644</positionY>
       <inhibitTransfer>false</inhibitTransfer>
       <stateType>1</stateType>
       <bpmnType>120</bpmnType>
@@ -351,8 +351,8 @@
       <notifyAuthorityFollowUp>false</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>1200</positionX>
-      <positionY>458</positionY>
+      <positionX>1190</positionX>
+      <positionY>678</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -684,6 +684,22 @@
         <sequence>2</sequence>
       </swimLanePK>
     </SwimLane>
+    <SwimLane>
+      <color>DFDFDF</color>
+      <height>211</height>
+      <width>1261</width>
+      <positionX>30</positionX>
+      <positionY>590</positionY>
+      <stateName>Aprovador</stateName>
+      <type>2</type>
+      <parentSequence>0</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>TRN-007</processId>
+        <version>1</version>
+        <sequence>3</sequence>
+      </swimLanePK>
+    </SwimLane>
   </list>
   <list/>
   <list/>
@@ -697,7 +713,7 @@
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
       <positionX>239</positionX>
-      <positionY>273</positionY>
+      <positionY>255</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
@@ -708,7 +724,7 @@
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
       <positionX>923</positionX>
-      <positionY>275</positionY>
+      <positionY>255</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
@@ -718,7 +734,7 @@
         <linkSequence>21</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
-      <positionX>1100</positionX>
+      <positionX>1099</positionX>
       <positionY>179</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
