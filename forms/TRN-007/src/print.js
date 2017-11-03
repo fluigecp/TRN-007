@@ -56,6 +56,10 @@ var printModule = (function(){
     };
 
     var getHeader = function (){
+        var data = new Date();
+        var dia = data.getDate() < 10 ? '0'+data.getDate() : data.getDate();
+        var mes = (data.getMonth()+1) < 10 ? '0'+(data.getMonth()+1) : (data.getMonth()+1);
+        var ano = data.getFullYear();
         var header = '<div>'+
         '				<div class="row">'+
         '					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-left">'+
@@ -63,6 +67,11 @@ var printModule = (function(){
         '					</div>'+
         '					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">'+
         '						<h4>Avaliação de eficácia de treinamento</h4>'+
+        '					</div>'+
+        '					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" style="font-size: 10px;">'+
+        '						<span><b>Data: </b></span><span>'+dia+'/'+mes+'/'+ano+'</span>'+
+        '						<br>'+
+        '						<span><b>Solicitação: </b></span><span>'+getProcess()+'</span>'+
         '					</div>'+
         '				</div>'+
         '				<div class="row">'+
@@ -287,7 +296,7 @@ var printModule = (function(){
 
             '       <div class="row">'+
                 '               <div class="col-md-12">'+
-                '                   <table style=" text-align: center;">'+
+                '                   <table style=" text-align: center; margin-bottom: 20px;">'+
                 '                       <th>'+
                 '                           <tr>'+
                 '                               <td style="width: 14%;">Participante</td>'+
@@ -309,6 +318,7 @@ var printModule = (function(){
                 '                         <td>__/__/____</td>'+
                 '                       </tr>'+
                 '                   </table>'+
+                '               Nº Solicitação: '+getProcess()+
                 '               </div>'+
             '       </div>';
 

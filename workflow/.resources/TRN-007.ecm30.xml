@@ -26,7 +26,11 @@
     <processDefinitionVersionPK>
       <companyId>1</companyId>
       <processId>Avaliar Treinamento - Eficácia</processId>
+<<<<<<< HEAD
       <version>4</version>
+=======
+      <version>3</version>
+>>>>>>> dev
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
     <formId>0</formId>
@@ -423,7 +427,11 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>1</expressionOrder>
+<<<<<<< HEAD
         <version>4</version>
+=======
+        <version>3</version>
+>>>>>>> dev
         <sequence>5</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;aprovarAvaliacao&quot;) == &quot;Sim&quot;</condition>
@@ -434,7 +442,11 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>2</expressionOrder>
+<<<<<<< HEAD
         <version>4</version>
+=======
+        <version>3</version>
+>>>>>>> dev
         <sequence>5</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;aprovarAvaliacao&quot;) == &quot;Não&quot;</condition>
@@ -445,7 +457,11 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>1</expressionOrder>
+<<<<<<< HEAD
         <version>4</version>
+=======
+        <version>3</version>
+>>>>>>> dev
         <sequence>8</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;aberturaAutomatica&quot;) == &quot;Sim&quot;</condition>
@@ -457,7 +473,11 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>2</expressionOrder>
+<<<<<<< HEAD
         <version>4</version>
+=======
+        <version>3</version>
+>>>>>>> dev
         <sequence>8</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;aberturaAutomatica&quot;) != &quot;Sim&quot;</condition>
@@ -468,7 +488,11 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>1</expressionOrder>
+<<<<<<< HEAD
         <version>4</version>
+=======
+        <version>3</version>
+>>>>>>> dev
         <sequence>10</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;usuarioParticipou&quot;) == &quot;Sim&quot;</condition>
@@ -479,7 +503,11 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>2</expressionOrder>
+<<<<<<< HEAD
         <version>4</version>
+=======
+        <version>3</version>
+>>>>>>> dev
         <sequence>10</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;usuarioParticipou&quot;) == &quot;Não&quot;</condition>
@@ -708,7 +736,11 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
+<<<<<<< HEAD
         <version>4</version>
+=======
+        <version>3</version>
+>>>>>>> dev
         <linkSequence>14</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -719,7 +751,11 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
+<<<<<<< HEAD
         <version>4</version>
+=======
+        <version>3</version>
+>>>>>>> dev
         <linkSequence>18</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -730,7 +766,11 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
+<<<<<<< HEAD
         <version>4</version>
+=======
+        <version>3</version>
+>>>>>>> dev
         <linkSequence>21</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -741,7 +781,11 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
+<<<<<<< HEAD
         <version>4</version>
+=======
+        <version>3</version>
+>>>>>>> dev
         <linkSequence>21</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
