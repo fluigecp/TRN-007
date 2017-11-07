@@ -233,6 +233,11 @@ var printModule = (function(){
                 '                    </div>'+
                 '                </div>'+
                 '             </div>'+
+                '       </div>'+
+            '       </div>'+
+            
+            '       <div class="row">'+
+                '        <div class="col-md-12">'+
                 '           <div class="form-field" data-type="textarea" data-show-properties="" data-field-name="justificativa1">'+
                 '               <div class="form-input">'+
                 '                   <div class="form-group">'+
@@ -268,6 +273,11 @@ var printModule = (function(){
                 '                       </div>'+
                 '                   </div>'+
                 '               </div>'+
+                '           </div>'+
+            '       </div>'+
+
+            '    <div class="row">'+
+                '        <div class="col-md-12">'+
                 '               <div class="form-field" data-type="textarea" data-show-properties="" data-field-name="justificativa2">'+
                 '                   <div class="form-input">'+
                 '                       <div class="form-group">'+
@@ -277,8 +287,8 @@ var printModule = (function(){
                 '                       </div>'+
                 '                   </div>'+
                 '               </div>'+
-                '           </div>'+
-            '       </div>'+
+                '       </div>'+
+            '    </div>'+
 
             '       <div class="row">'+
                 '           <div class="col-md-12">'+

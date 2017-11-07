@@ -59,6 +59,9 @@
 				margin-top: 10px;
 				margin-bottom: 10px;
 			}
+			.next-page{
+				page-break-before: always;
+			}
 		}
 		.container-text {
 			background-color: #e4e4e4;
@@ -91,5 +94,53 @@
 	<span id="content-pages">
 		<span id="spanPage___0"></span>
 	</span>
+	<script>
+		var breakPage = function() {
+			var height = 0;
+			var nextElementWillBreak = false;
+
+			$("#aprovacaoEficaciaForm .row").each(function(){
+				var currentElement = $(this);
+				height += currentElement.outerHeight();
+				/* console.log("HEIGHT: ",height); */
+				
+				if (nextElementWillBreak) {
+					var sum = currentElement.outerHeight() + height;
+					if ( sum > 842 ) {
+						/* console.log("NEXT ELEMENT WAS BROCK") */
+						currentElement.addClass("next-page");
+						height = 0;
+						nextElementWillBreak = false;
+					}
+				}
+
+				if ( height > 842 ) {
+					/* console.log("BREAK HEIGHT > 790"); */
+					currentElement.addClass("next-page");
+					height = 0;
+				}
+				
+				if ( height <= 842 ) {
+					var sum = currentElement.outerHeight() + height;
+					/* console.log("SUM: "+sum); */
+					if ( sum > 842 ) {
+						console.log("Break sum > 842");
+						currentElement.addClass("next-page");
+						height = 0;
+					} else {
+						/* console.log("WILL BREAK"); */
+						nextElementWillBreak = true;
+					}
+				}
+
+			});
+		}
+		$(document).on("ready", function(){
+			setTimeout(function(){
+				breakPage();
+			}, 3500);
+		});
+		
+	</script>
 </body>
 </html>
