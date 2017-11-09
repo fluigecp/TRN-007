@@ -22,7 +22,7 @@
         $(".expand").on("click ", manipulateDOM.actions4Listeners.expandTextAreaListener);
         
         /** Início - Life Cycle */
-        if ( activity == 0 || activity == 3 || activity == 9 ) {
+        if ( activity == 0 || activity == 3 || activity == 7 || activity == 9 ) {
             manipulateDOM.initCalendar('input[data-date-hour]');
         }
 

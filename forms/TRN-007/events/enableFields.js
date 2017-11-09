@@ -10,7 +10,7 @@ function enableFields(form) {
         form.setEnabled('pergunta3', false, true);
     }
 
-    if ( activity != 0 && activity != 3 && activity != 9 ) {
+    if ( activity != 0 && activity != 3 && activity != 7 && activity != 9 ) {
         form.setEnabled("nomeCurso", false, true);
         form.setEnabled("data1", false, true);
         form.setEnabled("data2", false, true);
@@ -24,6 +24,11 @@ function enableFields(form) {
         form.setEnabled("conteudoProgramatico", false, true);
     }
 
+    if ( activity == 7 ) {
+        form.setEnabled("avaliadorTreinamento", false, true);
+        form.setEnabled("aprovadorTreinamento", false, true);
+        form.setEnabled("usuarioParticipou", false, true);
+    }
     /** FIM - Life Cycle */
 
 }

@@ -3,12 +3,8 @@ function validaCampos(atividade, proximaAtividade) {
 
 	if (atividade == 0 || atividade == 3 || atividade == 9) {
 		addHasFree("nomeCurso");
-		addHasFree("data1");
-		addHasFree("data2");
 		addHasFree("nomeParticipante");
 		addHasFree("matParticipante");
-		addHasFree("cargoParticipante");
-		addHasFree("lotacaoParticipante");
 		addHasFree("avaliadorTreinamento");
 		addHasFree("aprovadorTreinamento");
 		addHasFree("usuarioParticipou");
@@ -22,6 +18,12 @@ function validaCampos(atividade, proximaAtividade) {
 		}
 		addHasFree('pergunta2');
 		addHasFree('pergunta3');
+		if ( atividade == 7 ) {
+			addHasFree("data1");
+			addHasFree("data2");
+			addHasFree("cargoParticipante");
+			addHasFree("lotacaoParticipante");
+		}
 	}
 
 	if (atividade == 4) {
