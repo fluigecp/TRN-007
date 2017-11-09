@@ -39,18 +39,21 @@ var printModule = (function(){
         matParticipante = modo == "VIEW" ? $("span[name*=matParticipante]").html() : $("input[name*=matParticipante]").val();
         conteudoProgramatico = modo == "VIEW" ? $("span[name*=conteudoProgramatico]").html() : $("textarea[name*=conteudoProgramatico]").val();
         cargoParticipante = modo == "VIEW" ? $("span[name*=cargoParticipante]").html() : $("#cargoParticipante").val();
+        cargoParticipante = cargoParticipante == null ? " " : cargoParticipante; 
         lotacaoParticipante = modo == "VIEW" ? $("span[name*=lotacaoParticipante]").html() : $("#lotacaoParticipante").val();
+        lotacaoParticipante = lotacaoParticipante == null ? " " : lotacaoParticipante;
         avaliadorTreinamento = modo == "VIEW" ? $("span[name*=avaliadorTreinamento]").html() : $("#avaliadorTreinamento").val();
+        avaliadorTreinamento = avaliadorTreinamento == null ? " " : avaliadorTreinamento;
         formObj = {
-            "nomeCurso":nomeCurso,
-            "dataInicio": dataInicio,
-            "dataFim": dataFim,
-            "nomeParticipante": nomeParticipante,
-            "matParticipante": matParticipante,
-            "conteudoProgramatico": conteudoProgramatico.replace(/\n/g, '<br>'),
-            "cargoParticipante": cargoParticipante,
-            "lotacaoParticipante": lotacaoParticipante,
-            "avaliadorTreinamento": avaliadorTreinamento
+            "nomeCurso":nomeCurso + "",
+            "dataInicio": dataInicio + "",
+            "dataFim": dataFim + "",
+            "nomeParticipante": nomeParticipante + "",
+            "matParticipante": matParticipante + "",
+            "conteudoProgramatico": conteudoProgramatico.replace(/\n/g, '<br>') + "",
+            "cargoParticipante": cargoParticipante + "",
+            "lotacaoParticipante": lotacaoParticipante + "",
+            "avaliadorTreinamento": avaliadorTreinamento + ""
         };
         return formObj;     
     };
@@ -91,6 +94,10 @@ var printModule = (function(){
             var dvHeader = myWindow.document.createElement('div');
             var header = getHeader();
             dvHeader.innerHTML = header;
+            if (list.dataInicio == "" && list.dataFim == "") {
+                list.dataInicio = "__/__/____";
+                list.dataFim = "__/__/____";
+            }
             dvHeader.id = 'aprovacaoEficaciaFormHeader';
             var html =
             '       <div class="row">'+
