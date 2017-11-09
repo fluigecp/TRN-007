@@ -2,91 +2,8 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Ficha de avaliação</title>
-	<style>
-		body {
-			background: rgb(#fff) !important;
-			font-family: Arial;
-			font-size: 12px !important;
-			padding: 1cm;
-		}
-		page {
-			background: white;
-			display: block;
-			margin: 0 auto;
-			margin-bottom: 0.5cm;
-			box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
-		}
-		page[size="A4"][layout="portrait"] {
-			width: 29.7cm;
-			height: 21cm; 
-			padding: 1cm;
-		}
-		@media print {
-			@page {size: portrait}
-			body, page {
-				margin: 0 !important;
-				box-shadow: 0 !important;
-			}
-			page{
-				padding: 0cm !important;
-			}
-			page td,th {
-				padding: 2px !important;
-				padding-left: 5px !important;
-			}
-			th{
-				-webkit-print-color-adjust: exact;
-			}
-			.container-text {
-				background-color: #e4e4e4;
-				border-width: 2px;
-				border-style: solid;
-				border-color: #000;
-				font-weight: bold;
-				text-align: center;
-				padding: 5px;
-				margin-top: 10px;
-				margin-bottom: 10px;
-			}
-
-			.container-text-2 {
-				background-color: #fff;
-				border-width: 2px;
-				border-style: solid;
-				border-color: #000;
-				padding: 5px;
-				vertical-align: middle;
-				margin-top: 10px;
-				margin-bottom: 10px;
-			}
-			.next-page{
-				page-break-before: always;
-			}
-		}
-		.container-text {
-			background-color: #e4e4e4;
-			border-width: 2px;
-			border-style: solid;
-			border-color: #000;
-			font-weight: bold;
-			text-align: center;
-			padding: 5px;
-			margin-top: 10px;
-			margin-bottom: 10px;
-		}
-
-		.container-text-2 {
-			background-color: #fff;
-			border-width: 2px;
-			border-style: solid;
-			border-color: #000;
-			padding: 5px;
-			vertical-align: middle;
-			margin-top: 10px;
-			margin-bottom: 10px;
-		}
-	</style>
 	<link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="print.css"/>
 	<script src="http://ecp.fluigcloud.com.br:80/portal/resources/js/jquery/jquery.js"></script>
 	<script src="http://ecp.fluigcloud.com.br:80/portal/resources/js/jquery/jquery-ui.min.js"></script>
 </head>
@@ -94,53 +11,7 @@
 	<span id="content-pages">
 		<span id="spanPage___0"></span>
 	</span>
-	<script>
-		var breakPage = function() {
-			var height = 0;
-			var nextElementWillBreak = false;
-
-			$("#aprovacaoEficaciaForm .row").each(function(){
-				var currentElement = $(this);
-				height += currentElement.outerHeight();
-				/* console.log("HEIGHT: ",height); */
-				
-				if (nextElementWillBreak) {
-					var sum = currentElement.outerHeight() + height;
-					if ( sum > 842 ) {
-						/* console.log("NEXT ELEMENT WAS BROCK") */
-						currentElement.addClass("next-page");
-						height = 0;
-						nextElementWillBreak = false;
-					}
-				}
-
-				if ( height > 842 ) {
-					/* console.log("BREAK HEIGHT > 790"); */
-					currentElement.addClass("next-page");
-					height = 0;
-				}
-				
-				if ( height <= 842 ) {
-					var sum = currentElement.outerHeight() + height;
-					/* console.log("SUM: "+sum); */
-					if ( sum > 842 ) {
-						console.log("Break sum > 842");
-						currentElement.addClass("next-page");
-						height = 0;
-					} else {
-						/* console.log("WILL BREAK"); */
-						nextElementWillBreak = true;
-					}
-				}
-
-			});
-		}
-		$(document).on("ready", function(){
-			setTimeout(function(){
-				breakPage();
-			}, 3500);
-		});
-		
-	</script>
+	<script src="breakPageModule.js"></script>
+	<script src="printLifeCycle.js"></script>
 </body>
 </html>

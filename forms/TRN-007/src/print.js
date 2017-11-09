@@ -347,10 +347,10 @@ var printModule = (function(){
             page.appendChild(dvDados);
             myWindow.document.getElementById("content-pages").appendChild(page);
 
-           setTimeout(function() {
+           /*setTimeout(function() {
                 myWindow.print();
                 myWindow.close(); 
-            }, 1500);
+            }, 1500);*/
 
         }catch(err){
             console.log('Erro na funcao '+ err.message);
