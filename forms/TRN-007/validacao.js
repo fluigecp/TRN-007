@@ -26,8 +26,12 @@ function validaCampos(atividade, proximaAtividade) {
 		}
 	}
 
-	if (atividade == 4) {
+	if ( atividade == 4 ) {
 		addHasFree("aprovarAvaliacao");
+	}
+
+	if ( atividade == 23 ) {
+		addHasFree("aprovarAvaliacaoRH");
 	}
 
 	/** Fim Life Cycle Workflow */

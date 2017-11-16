@@ -57,6 +57,12 @@ function displayFields(form, customHTML) {
 				ocultaId("btnShowTreinamento");
 			}
 		}
+		if ( activity != 7 ) {
+			ocultaClasse("aprovarAvaliacaoRHContainer");
+			ocultaClasse("pergunta-1-container");
+			ocultaClasse("pergunta-2-container");
+			ocultaClasse("pergunta-3-container");
+		}
 	}
 
 	if ( modo == "VIEW" ) {
