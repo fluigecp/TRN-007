@@ -43,6 +43,9 @@ function displayFields(form, customHTML) {
 	if (activity != 4) {
 		ocultaClasse("aprovarAvaliacaoContainer");
 	}
+	if ( activity != 7 ) {
+		ocultaClasse("aprovarAvaliacaoRHContainer");
+	}
 
 	if ( activity != 0 && activity != 3 && activity != 9 ) {
 		ocultaClasse("verificarParticipacaoContainer");
@@ -58,7 +61,6 @@ function displayFields(form, customHTML) {
 			}
 		}
 		if ( activity != 7 ) {
-			ocultaClasse("aprovarAvaliacaoRHContainer");
 			ocultaClasse("pergunta-1-container");
 			ocultaClasse("pergunta-2-container");
 			ocultaClasse("pergunta-3-container");
