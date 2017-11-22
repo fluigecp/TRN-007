@@ -32,7 +32,7 @@
             }
         }
 
-        if ( activity == 0 || activity == 3 || activity == 4 || activity == 6 || activity == 7 || activity == 9 ) {
+        if ( activity == 0 || activity == 3 || activity == 4 || activity == 6 || activity == 7 || activity == 9 || activity == 23 || activity == 27 ) {
             var aberturaAutomatica = $("#aberturaAutomatica").val();
             if ( aberturaAutomatica == "Sim" ) {
                 var numSolicAvaliacaoReacao = $("#solicAvaliacaoReacao").val();

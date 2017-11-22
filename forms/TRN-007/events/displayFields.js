@@ -43,7 +43,7 @@ function displayFields(form, customHTML) {
 	if (activity != 4) {
 		ocultaClasse("aprovarAvaliacaoContainer");
 	}
-	if ( activity != 7 ) {
+	if ( activity != 23 ) {
 		ocultaClasse("aprovarAvaliacaoRHContainer");
 	}
 
