@@ -55,6 +55,9 @@ var printModule = (function(){
             "lotacaoParticipante": lotacaoParticipante + "",
             "avaliadorTreinamento": avaliadorTreinamento + ""
         };
+        if ( formObj.conteudoProgramatico == "" ) {
+            formObj.conteudoProgramatico = "<div style='height: 100px;'></div>";
+        }
         return formObj;     
     };
 
