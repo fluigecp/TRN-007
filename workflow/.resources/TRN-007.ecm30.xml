@@ -101,8 +101,8 @@
         <version>1</version>
         <sequence>4</sequence>
       </processStatePK>
-      <stateName>Aprovar avaliação</stateName>
-      <stateDescription>Aprovar avaliação</stateDescription>
+      <stateName>Tomar conhecimento</stateName>
+      <stateDescription>Tomar conhecimento</stateDescription>
       <instruction></instruction>
       <deadlineTime>0</deadlineTime>
       <joint>false</joint>
@@ -303,31 +303,6 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <version>1</version>
-        <sequence>5</sequence>
-      </processStatePK>
-      <stateName>Aprovada?</stateName>
-      <stateDescription>Aprovada?</stateDescription>
-      <joint>false</joint>
-      <initialState>false</initialState>
-      <transferAttachments>false</transferAttachments>
-      <subProcessId></subProcessId>
-      <formFolder>0</formFolder>
-      <automatic>true</automatic>
-      <positionX>1070</positionX>
-      <positionY>644</positionY>
-      <inhibitTransfer>false</inhibitTransfer>
-      <stateType>1</stateType>
-      <bpmnType>120</bpmnType>
-      <signalId>0</signalId>
-      <openInstances>0</openInstances>
-      <destinationStates/>
-      <digitalSignature>false</digitalSignature>
-    </ProcessState>
-    <ProcessState>
-      <processStatePK>
-        <companyId>1</companyId>
-        <processId>TRN-007</processId>
-        <version>1</version>
         <sequence>8</sequence>
       </processStatePK>
       <stateName>Abertura automática?</stateName>
@@ -390,31 +365,6 @@
       <automatic>true</automatic>
       <positionX>1520</positionX>
       <positionY>424</positionY>
-      <inhibitTransfer>false</inhibitTransfer>
-      <stateType>1</stateType>
-      <bpmnType>120</bpmnType>
-      <signalId>0</signalId>
-      <openInstances>0</openInstances>
-      <destinationStates/>
-      <digitalSignature>false</digitalSignature>
-    </ProcessState>
-    <ProcessState>
-      <processStatePK>
-        <companyId>1</companyId>
-        <processId>TRN-007</processId>
-        <version>1</version>
-        <sequence>30</sequence>
-      </processStatePK>
-      <stateName>Avaliador é o aprovador?</stateName>
-      <stateDescription>Avaliador é o aprovador?</stateDescription>
-      <joint>false</joint>
-      <initialState>false</initialState>
-      <transferAttachments>false</transferAttachments>
-      <subProcessId></subProcessId>
-      <formFolder>0</formFolder>
-      <automatic>true</automatic>
-      <positionX>893</positionX>
-      <positionY>197</positionY>
       <inhibitTransfer>false</inhibitTransfer>
       <stateType>1</stateType>
       <bpmnType>120</bpmnType>
@@ -525,28 +475,6 @@
         <processId>TRN-007</processId>
         <expressionOrder>1</expressionOrder>
         <version>9</version>
-        <sequence>5</sequence>
-      </conditionProcessStatePK>
-      <condition>hAPI.getCardValue(&quot;aprovarAvaliacao&quot;) == &quot;Sim&quot;</condition>
-      <destinationSequenceId>23</destinationSequenceId>
-    </ConditionProcessState>
-    <ConditionProcessState>
-      <conditionProcessStatePK>
-        <companyId>1</companyId>
-        <processId>TRN-007</processId>
-        <expressionOrder>2</expressionOrder>
-        <version>9</version>
-        <sequence>5</sequence>
-      </conditionProcessStatePK>
-      <condition>hAPI.getCardValue(&quot;aprovarAvaliacao&quot;) == &quot;Não&quot;</condition>
-      <destinationSequenceId>7</destinationSequenceId>
-    </ConditionProcessState>
-    <ConditionProcessState>
-      <conditionProcessStatePK>
-        <companyId>1</companyId>
-        <processId>TRN-007</processId>
-        <expressionOrder>1</expressionOrder>
-        <version>9</version>
         <sequence>8</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;aberturaAutomatica&quot;) == &quot;Sim&quot;</condition>
@@ -607,28 +535,6 @@
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;aprovarAvaliacaoRH&quot;) != &quot;Sim&quot;</condition>
       <destinationSequenceId>7</destinationSequenceId>
-    </ConditionProcessState>
-    <ConditionProcessState>
-      <conditionProcessStatePK>
-        <companyId>1</companyId>
-        <processId>TRN-007</processId>
-        <expressionOrder>1</expressionOrder>
-        <version>9</version>
-        <sequence>30</sequence>
-      </conditionProcessStatePK>
-      <condition>hAPI.getCardValue(&quot;avaliadorTreinamento&quot;) == hAPI.getCardValue(&quot;aprovadorTreinamento&quot;)</condition>
-      <destinationSequenceId>23</destinationSequenceId>
-    </ConditionProcessState>
-    <ConditionProcessState>
-      <conditionProcessStatePK>
-        <companyId>1</companyId>
-        <processId>TRN-007</processId>
-        <expressionOrder>2</expressionOrder>
-        <version>9</version>
-        <sequence>30</sequence>
-      </conditionProcessStatePK>
-      <condition>hAPI.getCardValue(&quot;avaliadorTreinamento&quot;) != hAPI.getCardValue(&quot;aprovadorTreinamento&quot;)</condition>
-      <destinationSequenceId>4</destinationSequenceId>
     </ConditionProcessState>
   </list>
   <list>
@@ -733,54 +639,6 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <version>1</version>
-        <linkSequence>19</linkSequence>
-      </processLinkPK>
-      <actionLabel></actionLabel>
-      <returnPermited>false</returnPermited>
-      <initialStateSequence>4</initialStateSequence>
-      <finalStateSequence>5</finalStateSequence>
-      <returnLabel></returnLabel>
-      <name></name>
-      <automaticLink>false</automaticLink>
-      <type>0</type>
-    </ProcessLink>
-    <ProcessLink>
-      <processLinkPK>
-        <companyId>1</companyId>
-        <processId>TRN-007</processId>
-        <version>1</version>
-        <linkSequence>21</linkSequence>
-      </processLinkPK>
-      <actionLabel></actionLabel>
-      <returnPermited>false</returnPermited>
-      <initialStateSequence>5</initialStateSequence>
-      <finalStateSequence>7</finalStateSequence>
-      <returnLabel></returnLabel>
-      <name></name>
-      <automaticLink>false</automaticLink>
-      <type>0</type>
-    </ProcessLink>
-    <ProcessLink>
-      <processLinkPK>
-        <companyId>1</companyId>
-        <processId>TRN-007</processId>
-        <version>1</version>
-        <linkSequence>24</linkSequence>
-      </processLinkPK>
-      <actionLabel></actionLabel>
-      <returnPermited>false</returnPermited>
-      <initialStateSequence>5</initialStateSequence>
-      <finalStateSequence>23</finalStateSequence>
-      <returnLabel></returnLabel>
-      <name></name>
-      <automaticLink>false</automaticLink>
-      <type>0</type>
-    </ProcessLink>
-    <ProcessLink>
-      <processLinkPK>
-        <companyId>1</companyId>
-        <processId>TRN-007</processId>
-        <version>1</version>
         <linkSequence>26</linkSequence>
       </processLinkPK>
       <actionLabel></actionLabel>
@@ -829,27 +687,11 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <version>1</version>
-        <linkSequence>31</linkSequence>
+        <linkSequence>30</linkSequence>
       </processLinkPK>
       <actionLabel></actionLabel>
       <returnPermited>false</returnPermited>
       <initialStateSequence>7</initialStateSequence>
-      <finalStateSequence>30</finalStateSequence>
-      <returnLabel></returnLabel>
-      <name></name>
-      <automaticLink>false</automaticLink>
-      <type>0</type>
-    </ProcessLink>
-    <ProcessLink>
-      <processLinkPK>
-        <companyId>1</companyId>
-        <processId>TRN-007</processId>
-        <version>1</version>
-        <linkSequence>32</linkSequence>
-      </processLinkPK>
-      <actionLabel></actionLabel>
-      <returnPermited>false</returnPermited>
-      <initialStateSequence>30</initialStateSequence>
       <finalStateSequence>4</finalStateSequence>
       <returnLabel></returnLabel>
       <name></name>
@@ -861,11 +703,11 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <version>1</version>
-        <linkSequence>33</linkSequence>
+        <linkSequence>31</linkSequence>
       </processLinkPK>
       <actionLabel></actionLabel>
       <returnPermited>false</returnPermited>
-      <initialStateSequence>30</initialStateSequence>
+      <initialStateSequence>4</initialStateSequence>
       <finalStateSequence>23</finalStateSequence>
       <returnLabel></returnLabel>
       <name></name>
@@ -915,7 +757,7 @@
       <width>1691</width>
       <positionX>30</positionX>
       <positionY>590</positionY>
-      <stateName>Aprovador</stateName>
+      <stateName>Gerência Área</stateName>
       <type>2</type>
       <parentSequence>0</parentSequence>
       <swimLanePK>
@@ -939,39 +781,6 @@
       </processLinkBendPK>
       <positionX>239</positionX>
       <positionY>255</positionY>
-    </ProcessLinkBend>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>TRN-007</processId>
-        <version>9</version>
-        <linkSequence>21</linkSequence>
-        <bendSequence>1</bendSequence>
-      </processLinkBendPK>
-      <positionX>1097</positionX>
-      <positionY>178</positionY>
-    </ProcessLinkBend>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>TRN-007</processId>
-        <version>9</version>
-        <linkSequence>21</linkSequence>
-        <bendSequence>2</bendSequence>
-      </processLinkBendPK>
-      <positionX>612</positionX>
-      <positionY>177</positionY>
-    </ProcessLinkBend>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>TRN-007</processId>
-        <version>9</version>
-        <linkSequence>24</linkSequence>
-        <bendSequence>1</bendSequence>
-      </processLinkBendPK>
-      <positionX>1372</positionX>
-      <positionY>693</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
@@ -1011,66 +820,22 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <version>9</version>
-        <linkSequence>33</linkSequence>
+        <linkSequence>30</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
-      <positionX>1044</positionX>
-      <positionY>254</positionY>
+      <positionX>920</positionX>
+      <positionY>253</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <version>9</version>
-        <linkSequence>33</linkSequence>
-        <bendSequence>2</bendSequence>
-      </processLinkBendPK>
-      <positionX>1044</positionX>
-      <positionY>232</positionY>
-    </ProcessLinkBend>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>TRN-007</processId>
-        <version>9</version>
-        <linkSequence>33</linkSequence>
-        <bendSequence>3</bendSequence>
-      </processLinkBendPK>
-      <positionX>1044</positionX>
-      <positionY>210</positionY>
-    </ProcessLinkBend>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>TRN-007</processId>
-        <version>9</version>
-        <linkSequence>33</linkSequence>
-        <bendSequence>4</bendSequence>
-      </processLinkBendPK>
-      <positionX>1148</positionX>
-      <positionY>210</positionY>
-    </ProcessLinkBend>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>TRN-007</processId>
-        <version>9</version>
-        <linkSequence>33</linkSequence>
-        <bendSequence>5</bendSequence>
-      </processLinkBendPK>
-      <positionX>1148</positionX>
-      <positionY>252</positionY>
-    </ProcessLinkBend>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>TRN-007</processId>
-        <version>9</version>
-        <linkSequence>33</linkSequence>
-        <bendSequence>6</bendSequence>
+        <linkSequence>31</linkSequence>
+        <bendSequence>1</bendSequence>
       </processLinkBendPK>
       <positionX>1372</positionX>
-      <positionY>253</positionY>
+      <positionY>693</positionY>
     </ProcessLinkBend>
   </list>
   <list/>
