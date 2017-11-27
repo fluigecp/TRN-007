@@ -18,9 +18,10 @@ function validaCampos(atividade, proximaAtividade) {
 		}
 		addHasFree('pergunta2');
 		addHasFree('pergunta3');
+		addHasFree('justificativa2');
 		if ( atividade == 7 ) {
-			addHasFree("data1");
-			addHasFree("data2");
+			addHasFree("dataInicio");
+			addHasFree("dataTermino");
 			addHasFree("cargoParticipante");
 			addHasFree("lotacaoParticipante");
 		}

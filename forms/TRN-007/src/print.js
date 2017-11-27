@@ -33,8 +33,8 @@ var printModule = (function(){
        var formObj, nomeCurso, dataInicio, dataFim, nomeParticipante,
              matParticipante, conteudoProgramatico, cargoParticipante, lotacaoParticipante, avaliadorTreinamento;
         nomeCurso = modo == "VIEW" ? $("span[name*=nomeCurso]").html() : $("input[name*=nomeCurso]").val();
-        dataInicio = modo == "VIEW" ? $("span[name*=data1]").html() : $("input[name*=data1]").val();
-        dataFim = modo == "VIEW" ? $("span[name*=data2]").html() : $("input[name*=data2]").val();
+        dataInicio = modo == "VIEW" ? $("span[name*=dataInicio]").html() : $("input[name*=dataInicio]").val();
+        dataFim = modo == "VIEW" ? $("span[name*=dataTermino]").html() : $("input[name*=dataTermino]").val();
         nomeParticipante = modo == "VIEW" ? $("span[name*=nomeParticipante]").html() : $("input[name*=nomeParticipante]").val();
         matParticipante = modo == "VIEW" ? $("span[name*=matParticipante]").html() : $("input[name*=matParticipante]").val();
         conteudoProgramatico = modo == "VIEW" ? $("span[name*=conteudoProgramatico]").html() : $("textarea[name*=conteudoProgramatico]").val();

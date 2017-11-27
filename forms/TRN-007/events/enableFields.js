@@ -12,8 +12,8 @@ function enableFields(form) {
 
     if ( activity != 0 && activity != 3 && activity != 7 && activity != 9 ) {
         form.setEnabled("nomeCurso", false, true);
-        form.setEnabled("data1", false, true);
-        form.setEnabled("data2", false, true);
+        form.setEnabled("dataInicio", false, true);
+        form.setEnabled("dataTermino", false, true);
         form.setEnabled("nomeParticipante", false, true);
         form.setEnabled("matParticipante", false, true);
         form.setEnabled("cargoParticipante", false, true);
