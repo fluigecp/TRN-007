@@ -6,7 +6,7 @@ function validaCampos(atividade, proximaAtividade) {
 		addHasFree("nomeParticipante");
 		addHasFree("matParticipante");
 		addHasFree("avaliadorTreinamento");
-		addHasFree("aprovadorTreinamento");
+		addHasFree("responsavelArea");
 		addHasFree("usuarioParticipou");
 		addHasFree("conteudoProgramatico");
 	}

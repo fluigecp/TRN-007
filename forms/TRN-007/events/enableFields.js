@@ -19,14 +19,14 @@ function enableFields(form) {
         form.setEnabled("cargoParticipante", false, true);
         form.setEnabled("lotacaoParticipante", false, true);
         form.setEnabled("avaliadorTreinamento", false, true);
-        form.setEnabled("aprovadorTreinamento", false, true);
+        form.setEnabled("responsavelArea", false, true);
         form.setEnabled("usuarioParticipou", false, true);
         form.setEnabled("conteudoProgramatico", false, true);
     }
 
     if ( activity == 7 ) {
         form.setEnabled("avaliadorTreinamento", false, true);
-        form.setEnabled("aprovadorTreinamento", false, true);
+        form.setEnabled("responsavelArea", false, true);
         form.setEnabled("usuarioParticipou", false, true);
     }
     /** FIM - Life Cycle */
