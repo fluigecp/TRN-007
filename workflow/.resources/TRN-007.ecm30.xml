@@ -26,7 +26,7 @@
     <processDefinitionVersionPK>
       <companyId>1</companyId>
       <processId>Avaliar Treinamento - Eficácia</processId>
-      <version>9</version>
+      <version>10</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
     <formId>0</formId>
@@ -108,7 +108,7 @@
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
       <engineAllocationId>Campo Formulário</engineAllocationId>
-      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;FormField&gt;aprovadorMat&lt;/FormField&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;FormField&gt;responsavelAreaMat&lt;/FormField&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
       <selectColleague>0</selectColleague>
       <initialState>false</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
@@ -203,8 +203,8 @@
         <version>1</version>
         <sequence>9</sequence>
       </processStatePK>
-      <stateName>Atribuir avaliador e aprovador</stateName>
-      <stateDescription>Atribuir avaliador e aprovador</stateDescription>
+      <stateName>Atribuir avaliador e responsável da área</stateName>
+      <stateDescription>Atribuir avaliador e responsável da área</stateDescription>
       <instruction></instruction>
       <deadlineTime>0</deadlineTime>
       <joint>false</joint>
@@ -226,7 +226,7 @@
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
       <positionX>380</positionX>
-      <positionY>433</positionY>
+      <positionY>426</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -474,7 +474,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>1</expressionOrder>
-        <version>9</version>
+        <version>10</version>
         <sequence>8</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;aberturaAutomatica&quot;) == &quot;Sim&quot;</condition>
@@ -486,7 +486,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>2</expressionOrder>
-        <version>9</version>
+        <version>10</version>
         <sequence>8</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;aberturaAutomatica&quot;) != &quot;Sim&quot;</condition>
@@ -497,7 +497,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>1</expressionOrder>
-        <version>9</version>
+        <version>10</version>
         <sequence>10</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;usuarioParticipou&quot;) == &quot;Sim&quot;</condition>
@@ -508,7 +508,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>2</expressionOrder>
-        <version>9</version>
+        <version>10</version>
         <sequence>10</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;usuarioParticipou&quot;) == &quot;Não&quot;</condition>
@@ -519,7 +519,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>1</expressionOrder>
-        <version>9</version>
+        <version>10</version>
         <sequence>25</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;aprovarAvaliacaoRH&quot;) == &quot;Sim&quot;</condition>
@@ -530,7 +530,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>2</expressionOrder>
-        <version>9</version>
+        <version>10</version>
         <sequence>25</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;aprovarAvaliacaoRH&quot;) != &quot;Sim&quot;</condition>
@@ -775,7 +775,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>9</version>
+        <version>10</version>
         <linkSequence>14</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -786,7 +786,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>9</version>
+        <version>10</version>
         <linkSequence>29</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -797,7 +797,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>9</version>
+        <version>10</version>
         <linkSequence>29</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -808,7 +808,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>9</version>
+        <version>10</version>
         <linkSequence>29</linkSequence>
         <bendSequence>3</bendSequence>
       </processLinkBendPK>
@@ -819,7 +819,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>9</version>
+        <version>10</version>
         <linkSequence>30</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -830,7 +830,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>9</version>
+        <version>10</version>
         <linkSequence>31</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
