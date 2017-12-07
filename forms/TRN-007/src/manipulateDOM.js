@@ -56,6 +56,17 @@ var manipulateDOM = (function () {
                 manipulateDOM.zoomFields.clearZoomData("avaliadorTreinamento");
                 document.getElementById("avaliadorMat").value = "";
             }    
+        },
+
+        /**
+         * @description Função listener para verificar a lotação do participante
+         */
+        checkLotacaoParticipante: function() {
+            var matricula = document.getElementById("matParticipante").value;
+            var lotacaoName = servicesModule.findLotacaoByMat(matricula);
+            if (lotacaoName != "") {
+                manipulateDOM.zoomFields.setZoomData("lotacaoParticipante", lotacaoName);
+            }
         }
 
     };

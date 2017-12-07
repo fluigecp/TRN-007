@@ -28,6 +28,7 @@
                 $("#matParticipante").on("blur", manipulateDOM.actions4Listeners.checkIfParticipanteHasFluigListener);
                 if ( activity == 9 ) {
                     setTimeout(manipulateDOM.actions4Listeners.checkIfParticipanteHasFluigListener, 10000);
+                    setTimeout(manipulateDOM.actions4Listeners.checkLotacaoParticipante, 10000);
                 }
             }
         }
