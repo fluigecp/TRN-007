@@ -26,7 +26,7 @@
     <processDefinitionVersionPK>
       <companyId>1</companyId>
       <processId>Avaliar Treinamento - Eficácia</processId>
-      <version>14</version>
+      <version>19</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
     <formId>0</formId>
@@ -621,7 +621,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>1</expressionOrder>
-        <version>14</version>
+        <version>19</version>
         <sequence>8</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;aberturaAutomatica&quot;) == &quot;Sim&quot;</condition>
@@ -633,7 +633,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>2</expressionOrder>
-        <version>14</version>
+        <version>19</version>
         <sequence>8</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;aberturaAutomatica&quot;) != &quot;Sim&quot;</condition>
@@ -644,7 +644,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>1</expressionOrder>
-        <version>14</version>
+        <version>19</version>
         <sequence>10</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;usuarioParticipou&quot;) == &quot;Sim&quot;</condition>
@@ -655,7 +655,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>2</expressionOrder>
-        <version>14</version>
+        <version>19</version>
         <sequence>10</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;usuarioParticipou&quot;) == &quot;Não&quot;</condition>
@@ -666,7 +666,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>1</expressionOrder>
-        <version>14</version>
+        <version>19</version>
         <sequence>25</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;aprovarAvaliacaoRH&quot;) == &quot;Sim&quot;</condition>
@@ -677,7 +677,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>2</expressionOrder>
-        <version>14</version>
+        <version>19</version>
         <sequence>25</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;aprovarAvaliacaoRH&quot;) != &quot;Sim&quot;</condition>
@@ -936,135 +936,135 @@
         <processId>TRN-007</processId>
         <version>1</version>
       </workflowProcessEventPK>
-      <eventDescription>function servicetask36(attempt, message) {
-	try {
-		var Service = ServiceManager.getService(&apos;ECMCardService&apos;);
-		log.warn(&apos;%%%%%% Service: &apos; + Service);
-
-		var serviceHelper = Service.getBean();
-		log.warn(&apos;%%%%%% serviceHelper: &apos; + serviceHelper);
-
-		var serviceInstance = serviceHelper.instantiate(&quot;com.totvs.technology.ecm.dm.ws.ECMCardServiceService&quot;);
-		log.warn(&apos;%%%%%% serviceInstance: &apos; + serviceInstance);
-
-		var cardFieldDtoArray = serviceHelper.instantiate(&quot;com.totvs.technology.ecm.dm.ws.CardFieldDtoArray&quot;);
-		log.warn(&apos;%%%%%% cardFieldDtoArray: &apos; + cardFieldDtoArray);
-
-		var portServico = serviceInstance.getCardServicePort();
-		log.warn(&apos;%%%%%% portServico: &apos; + portServico);
-
-		var user = hAPI.getAdvancedProperty(&quot;loginUserWS&quot;);
-		log.warn(&apos;%%%%%% user: &apos; + user);
-
-		var password = hAPI.getAdvancedProperty(&quot;passwdUserWS&quot;);
-		log.warn(&apos;%%%%%% password: &apos; + password);
-
-		var empresa = parseInt(getValue(&quot;WKCompany&quot;));
-		log.warn(&apos;%%%%%% empresa: &apos; + empresa + &apos; TypeOf: &apos; + typeof empresa);
-
-		// INICIANDO A IMPLEMENTAÇÃO DA INTEGRAÇÃO COM A FICHA DO PARTICIPANTE
-		
-		// Obtém matricula do participante
-		var matricula = hAPI.getCardValue(&quot;matParticipante&quot;);
-
-		// Obtém os dados do participante no humanus
-		var humanusData = getParticipanteHumanusData(matricula);
-		log.warn(&apos;%%%%%% humanusData: &apos; + humanusData);
-
-		// verifica se o participante possui ficha de treinamentos
-		var ficha = checkIfHasFicha(matricula);
-		log.warn(&apos;%%%%%% ficha: &apos; + ficha);
-
-		/** 
-		 * Verifica o ano que o treinamento avaliado foi aplicado
-		 * TODO: Implementar substring corretamente para atribuir apenas o ano
-		 */
-
-		var anoTreinamento = hAPI.getCardValue(&quot;dataInicio&quot;);
-		anoTreinamento = anoTreinamento.substr(anoTreinamento.length - 4);
-
-		// Array que armazena os valores de cada campo de participante
-		var arrayCardValuesAvaliacao = [
-			hAPI.getCardValue(&quot;numSolicTreinamento&quot;),
-			hAPI.getCardValue(&quot;nomeCurso&quot;),
-			anoTreinamento,
-			hAPI.getCardValue(&quot;dataInicio&quot;),
-			hAPI.getCardValue(&quot;dataTermino&quot;)
-		]
-		// se houver, atualiza a ficha. 
-		if (ficha != null) {
-			var documentid = ficha.getValue(0, &quot;documentid&quot;);
-			var avaliacoesCount = getAvaliacoesEficaciaCount(documentid);
-			var arrayCardFieldsAvaliacao = [];
-			arrayCardFieldsAvaliacao.push(&quot;numero_solicitacao_tb3___&quot; + avaliacoesCount + 1);
-			arrayCardFieldsAvaliacao.push(&quot;titulo_do_treinamento_tb3___&quot; + avaliacoesCount + 1);
-			arrayCardFieldsAvaliacao.push(&quot;ano_realizacao_tb3___&quot; + avaliacoesCount + 1);
-			arrayCardFieldsAvaliacao.push(&quot;data_inicio_tb3___&quot; + avaliacoesCount + 1);
-			arrayCardFieldsAvaliacao.push(&quot;data_termino_tb3___&quot; + avaliacoesCount + 1);
-			// objeto que irá armazenar todos os campos e os respectivos valores (update)
-			var cardFieldDtoArray = serviceHelper.instantiate(&quot;com.totvs.technology.ecm.dm.ws.CardFieldDtoArray&quot;);
-
-			for (var i = 0; i &lt; arrayCardFieldsAvaliacao.length; i++) {
-				var cardFieldDto = serviceHelper.instantiate(&quot;com.totvs.technology.ecm.dm.ws.CardFieldDto&quot;);
-				//atribuindo a chave do campo
-				cardFieldDto.setField(arrayCardFieldsAvaliacao[i]);
-				//atribuindo valor ao campo
-				cardFieldDto.setValue(arrayCardValuesAvaliacao[i]);
-				// adicionando no objeto de valores - update
-				cardFieldDtoArray.getItem().add(cardFieldDto);
-			}
-
-			// objeto array que irá armazenar objetos CardFieldDto
-			log.warn(&apos;%%%%%% atualizando ficha &apos;);
-			portServico.updateCardData(empresa, user, password, documentid, cardFieldDtoArray);
-			log.warn(&apos;%%%%%% ficha atualizada &apos;);
-		}
-	} catch (error) {
-		log.error(error);
-		throw error;
-	}
-}
-
-/**
- * Verifica se o participante possui ficha de treinamento.
- * @param {int} mat - Matricula do participante
- * @returns obj Dataset, caso tenha ficha, null caso não tenha.
- */
-function checkIfHasFicha(mat) {
-	var c1 = DatasetFactory.createConstraint(&quot;metadata#active&quot;, true, true, ConstraintType.MUST);
-	var c2 = DatasetFactory.createConstraint(&quot;matricula&quot;, mat, mat, ConstraintType.MUST);
-	var fichaReg = DatasetFactory.getDataset(&quot;participante_x_treinamento&quot;, null, [c1, c2], null);
-	if (fichaReg.rowsCount &gt; 0) {
-		return fichaReg;
-	}
-	return null;
-}
-/**
- * Retorna os dados do participante
- * @param {int} mat  - Matricula do participante
- * @returns - Obj Dataset, caso a matrícula seja encontrada na base de dados, null caso a matricula não seja encontrada.
- */
-function getParticipanteHumanusData(mat) {
-	var c1 = DatasetFactory.createConstraint(&quot;matricula&quot;, mat, mat, ConstraintType.MUST);
-	var humanusData = DatasetFactory.getDataset(&quot;wsFuncionarios&quot;, null, [c1], null);
-	if (humanusData.rowsCount &gt; 0) {
-		return humanusData;
-	}
-	return null;
-}
-
-/**
- * Retorna a quantidade de avaliações de eficácia existentes na ficha do participante
- * @param {int} documentid - id da ficha de treinamento
- * @returns - quantidade de avaliações de eficácia registrados.
- */
-function getAvaliacoesEficaciaCount(documentid) {
-	var c1 = DatasetFactory.createConstraint(&quot;metadata#active&quot;, true, true, ConstraintType.MUST);
-	var c2 = DatasetFactory.createConstraint(&quot;documentid&quot;, documentid, documentid, ConstraintType.MUST);
-	var tablename = DatasetFactory.createConstraint(&quot;tablename&quot;, &quot;avaliacoes_eficacia&quot;, &quot;avaliacoes_eficacia&quot;, ConstraintType.MUST);
-	var fichaParticipante = DatasetFactory.getDataset(&quot;participante_x_treinamento&quot;, null, [c1, c2, tablename], null);
-	return fichaParticipante.rowsCount;
-}
+      <eventDescription>function servicetask36(attempt, message) {&#xd;
+	try {&#xd;
+		var Service = ServiceManager.getService(&apos;ECMCardService&apos;);&#xd;
+		log.warn(&apos;%%%%%% Service: &apos; + Service);&#xd;
+&#xd;
+		var serviceHelper = Service.getBean();&#xd;
+		log.warn(&apos;%%%%%% serviceHelper: &apos; + serviceHelper);&#xd;
+&#xd;
+		var serviceInstance = serviceHelper.instantiate(&quot;com.totvs.technology.ecm.dm.ws.ECMCardServiceService&quot;);&#xd;
+		log.warn(&apos;%%%%%% serviceInstance: &apos; + serviceInstance);&#xd;
+&#xd;
+		var cardFieldDtoArray = serviceHelper.instantiate(&quot;com.totvs.technology.ecm.dm.ws.CardFieldDtoArray&quot;);&#xd;
+		log.warn(&apos;%%%%%% cardFieldDtoArray: &apos; + cardFieldDtoArray);&#xd;
+&#xd;
+		var portServico = serviceInstance.getCardServicePort();&#xd;
+		log.warn(&apos;%%%%%% portServico: &apos; + portServico);&#xd;
+&#xd;
+		var user = hAPI.getAdvancedProperty(&quot;loginUserWS&quot;);&#xd;
+		log.warn(&apos;%%%%%% user: &apos; + user);&#xd;
+&#xd;
+		var password = hAPI.getAdvancedProperty(&quot;passwdUserWS&quot;);&#xd;
+		log.warn(&apos;%%%%%% password: &apos; + password);&#xd;
+&#xd;
+		var empresa = parseInt(getValue(&quot;WKCompany&quot;));&#xd;
+		log.warn(&apos;%%%%%% empresa: &apos; + empresa + &apos; TypeOf: &apos; + typeof empresa);&#xd;
+&#xd;
+		// INICIANDO A IMPLEMENTAÇÃO DA INTEGRAÇÃO COM A FICHA DO PARTICIPANTE&#xd;
+		&#xd;
+		// Obtém matricula do participante&#xd;
+		var matricula = hAPI.getCardValue(&quot;matParticipante&quot;);&#xd;
+&#xd;
+		// Obtém os dados do participante no humanus&#xd;
+		var humanusData = getParticipanteHumanusData(matricula);&#xd;
+		log.warn(&apos;%%%%%% humanusData: &apos; + humanusData);&#xd;
+&#xd;
+		// verifica se o participante possui ficha de treinamentos&#xd;
+		var ficha = checkIfHasFicha(matricula);&#xd;
+		log.warn(&apos;%%%%%% ficha: &apos; + ficha);&#xd;
+&#xd;
+		/** &#xd;
+		 * Verifica o ano que o treinamento avaliado foi aplicado&#xd;
+		 * TODO: Implementar substring corretamente para atribuir apenas o ano&#xd;
+		 */&#xd;
+&#xd;
+		var anoTreinamento = hAPI.getCardValue(&quot;dataInicio&quot;);&#xd;
+		anoTreinamento = anoTreinamento.substr(anoTreinamento.indexOf(&quot;/&quot;, 3) + 1);&#xd;
+&#xd;
+		// Array que armazena os valores de cada campo de participante&#xd;
+		var arrayCardValuesAvaliacao = [&#xd;
+			hAPI.getCardValue(&quot;numProcess&quot;),&#xd;
+			hAPI.getCardValue(&quot;nomeCurso&quot;),&#xd;
+			anoTreinamento,&#xd;
+			hAPI.getCardValue(&quot;dataInicio&quot;),&#xd;
+			hAPI.getCardValue(&quot;dataTermino&quot;)&#xd;
+		]&#xd;
+		// se houver, atualiza a ficha. &#xd;
+		if (ficha != null) {&#xd;
+			var documentid = ficha.getValue(0, &quot;documentid&quot;);&#xd;
+			var avaliacoesCount = getAvaliacoesEficaciaCount(documentid);&#xd;
+			var arrayCardFieldsAvaliacao = [];&#xd;
+			arrayCardFieldsAvaliacao.push(&quot;numero_solicitacao_tb3___&quot; + avaliacoesCount + 1);&#xd;
+			arrayCardFieldsAvaliacao.push(&quot;titulo_do_treinamento_tb3___&quot; + avaliacoesCount + 1);&#xd;
+			arrayCardFieldsAvaliacao.push(&quot;ano_realizacao_tb3___&quot; + avaliacoesCount + 1);&#xd;
+			arrayCardFieldsAvaliacao.push(&quot;data_inicio_tb3___&quot; + avaliacoesCount + 1);&#xd;
+			arrayCardFieldsAvaliacao.push(&quot;data_termino_tb3___&quot; + avaliacoesCount + 1);&#xd;
+			// objeto que irá armazenar todos os campos e os respectivos valores (update)&#xd;
+			var cardFieldDtoArray = serviceHelper.instantiate(&quot;com.totvs.technology.ecm.dm.ws.CardFieldDtoArray&quot;);&#xd;
+&#xd;
+			for (var i = 0; i &lt; arrayCardFieldsAvaliacao.length; i++) {&#xd;
+				var cardFieldDto = serviceHelper.instantiate(&quot;com.totvs.technology.ecm.dm.ws.CardFieldDto&quot;);&#xd;
+				//atribuindo a chave do campo&#xd;
+				cardFieldDto.setField(arrayCardFieldsAvaliacao[i]);&#xd;
+				//atribuindo valor ao campo&#xd;
+				cardFieldDto.setValue(arrayCardValuesAvaliacao[i]);&#xd;
+				// adicionando no objeto de valores - update&#xd;
+				cardFieldDtoArray.getItem().add(cardFieldDto);&#xd;
+			}&#xd;
+&#xd;
+			// objeto array que irá armazenar objetos CardFieldDto&#xd;
+			log.warn(&apos;%%%%%% atualizando ficha &apos;);&#xd;
+			portServico.updateCardData(empresa, user, password, documentid, cardFieldDtoArray);&#xd;
+			log.warn(&apos;%%%%%% ficha atualizada &apos;);&#xd;
+		}&#xd;
+	} catch (error) {&#xd;
+		log.error(error);&#xd;
+		throw error;&#xd;
+	}&#xd;
+}&#xd;
+&#xd;
+/**&#xd;
+ * Verifica se o participante possui ficha de treinamento.&#xd;
+ * @param {int} mat - Matricula do participante&#xd;
+ * @returns obj Dataset, caso tenha ficha, null caso não tenha.&#xd;
+ */&#xd;
+function checkIfHasFicha(mat) {&#xd;
+	var c1 = DatasetFactory.createConstraint(&quot;metadata#active&quot;, true, true, ConstraintType.MUST);&#xd;
+	var c2 = DatasetFactory.createConstraint(&quot;matricula&quot;, mat, mat, ConstraintType.MUST);&#xd;
+	var fichaReg = DatasetFactory.getDataset(&quot;participante_x_treinamento&quot;, null, [c1, c2], null);&#xd;
+	if (fichaReg.rowsCount &gt; 0) {&#xd;
+		return fichaReg;&#xd;
+	}&#xd;
+	return null;&#xd;
+}&#xd;
+/**&#xd;
+ * Retorna os dados do participante&#xd;
+ * @param {int} mat  - Matricula do participante&#xd;
+ * @returns - Obj Dataset, caso a matrícula seja encontrada na base de dados, null caso a matricula não seja encontrada.&#xd;
+ */&#xd;
+function getParticipanteHumanusData(mat) {&#xd;
+	var c1 = DatasetFactory.createConstraint(&quot;matricula&quot;, mat, mat, ConstraintType.MUST);&#xd;
+	var humanusData = DatasetFactory.getDataset(&quot;wsFuncionarios&quot;, null, [c1], null);&#xd;
+	if (humanusData.rowsCount &gt; 0) {&#xd;
+		return humanusData;&#xd;
+	}&#xd;
+	return null;&#xd;
+}&#xd;
+&#xd;
+/**&#xd;
+ * Retorna a quantidade de avaliações de eficácia existentes na ficha do participante&#xd;
+ * @param {int} documentid - id da ficha de treinamento&#xd;
+ * @returns - quantidade de avaliações de eficácia registrados.&#xd;
+ */&#xd;
+function getAvaliacoesEficaciaCount(documentid) {&#xd;
+	var c1 = DatasetFactory.createConstraint(&quot;metadata#active&quot;, true, true, ConstraintType.MUST);&#xd;
+	var c2 = DatasetFactory.createConstraint(&quot;documentid&quot;, documentid, documentid, ConstraintType.MUST);&#xd;
+	var tablename = DatasetFactory.createConstraint(&quot;tablename&quot;, &quot;avaliacoes_eficacia&quot;, &quot;avaliacoes_eficacia&quot;, ConstraintType.MUST);&#xd;
+	var fichaParticipante = DatasetFactory.getDataset(&quot;participante_x_treinamento&quot;, null, [c1, c2, tablename], null);&#xd;
+	return fichaParticipante.rowsCount;&#xd;
+}&#xd;
 </eventDescription>
     </WorkflowProcessEvent>
   </list>
@@ -1074,7 +1074,7 @@ function getAvaliacoesEficaciaCount(documentid) {
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <propertyId>loginUserWS</propertyId>
-        <version>14</version>
+        <version>19</version>
       </advancedProcessPropertiesPK>
       <propertieValue>servico</propertieValue>
     </AdvancedProcessProperties>
@@ -1083,7 +1083,7 @@ function getAvaliacoesEficaciaCount(documentid) {
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <propertyId>matUserWS</propertyId>
-        <version>14</version>
+        <version>19</version>
       </advancedProcessPropertiesPK>
       <propertieValue>0000</propertieValue>
     </AdvancedProcessProperties>
@@ -1092,7 +1092,7 @@ function getAvaliacoesEficaciaCount(documentid) {
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <propertyId>passwdUserWS</propertyId>
-        <version>14</version>
+        <version>19</version>
       </advancedProcessPropertiesPK>
       <propertieValue>fcea920f7412b5da7be0cf42b8c93759</propertieValue>
     </AdvancedProcessProperties>
@@ -1186,7 +1186,7 @@ function getAvaliacoesEficaciaCount(documentid) {
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>14</version>
+        <version>19</version>
         <linkSequence>14</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1197,7 +1197,7 @@ function getAvaliacoesEficaciaCount(documentid) {
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>14</version>
+        <version>19</version>
         <linkSequence>29</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1208,7 +1208,7 @@ function getAvaliacoesEficaciaCount(documentid) {
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>14</version>
+        <version>19</version>
         <linkSequence>29</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -1219,7 +1219,7 @@ function getAvaliacoesEficaciaCount(documentid) {
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>14</version>
+        <version>19</version>
         <linkSequence>29</linkSequence>
         <bendSequence>3</bendSequence>
       </processLinkBendPK>
@@ -1230,7 +1230,7 @@ function getAvaliacoesEficaciaCount(documentid) {
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>14</version>
+        <version>19</version>
         <linkSequence>30</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1241,7 +1241,7 @@ function getAvaliacoesEficaciaCount(documentid) {
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>14</version>
+        <version>19</version>
         <linkSequence>31</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1252,7 +1252,7 @@ function getAvaliacoesEficaciaCount(documentid) {
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>14</version>
+        <version>19</version>
         <linkSequence>32</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1263,7 +1263,7 @@ function getAvaliacoesEficaciaCount(documentid) {
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>14</version>
+        <version>19</version>
         <linkSequence>38</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1274,7 +1274,7 @@ function getAvaliacoesEficaciaCount(documentid) {
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>14</version>
+        <version>19</version>
         <linkSequence>41</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1285,7 +1285,7 @@ function getAvaliacoesEficaciaCount(documentid) {
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>14</version>
+        <version>19</version>
         <linkSequence>41</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -1299,7 +1299,7 @@ function getAvaliacoesEficaciaCount(documentid) {
       <extendedPropertyFieldPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>14</version>
+        <version>19</version>
         <stateSequence>0</stateSequence>
         <propertyName>loginUserWS</propertyName>
       </extendedPropertyFieldPK>
@@ -1312,7 +1312,7 @@ function getAvaliacoesEficaciaCount(documentid) {
       <extendedPropertyFieldPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>14</version>
+        <version>19</version>
         <stateSequence>0</stateSequence>
         <propertyName>matUserWS</propertyName>
       </extendedPropertyFieldPK>
@@ -1325,7 +1325,7 @@ function getAvaliacoesEficaciaCount(documentid) {
       <extendedPropertyFieldPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>14</version>
+        <version>19</version>
         <stateSequence>0</stateSequence>
         <propertyName>passwdUserWS</propertyName>
       </extendedPropertyFieldPK>

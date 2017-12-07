@@ -236,34 +236,34 @@
       </anchors>
     </children>
     <children active="true" visible="true" xsi:type="pi:ContainerShape">
-      <graphicsAlgorithm filled="false" height="84" lineVisible="false" lineWidth="1" transparency="0.0" width="105" x="1750" xsi:type="al:Rectangle" y="873"/>
+      <graphicsAlgorithm filled="false" height="70" lineVisible="false" lineWidth="1" transparency="0.0" width="106" x="1750" xsi:type="al:Rectangle" y="873"/>
       <link businessObjects="servicetask36"/>
       <anchors incomingConnections="/0/@connections.12 /0/@connections.14" outgoingConnections="/0/@connections.11" xsi:type="pi:ChopboxAnchor"/>
       <anchors active="true" referencedGraphicsAlgorithm="/0/@children.15/@graphicsAlgorithm" relativeHeight="0.51" relativeWidth="1.0" visible="true" xsi:type="pi:BoxRelativeAnchor">
         <graphicsAlgorithm filled="false" lineVisible="false" xsi:type="al:Ellipse"/>
       </anchors>
       <children visible="true">
-        <graphicsAlgorithm cornerHeight="5" cornerWidth="5" height="84" lineWidth="1" style="/0/@styles.124" transparency="0.0" width="105" xsi:type="al:RoundedRectangle"/>
+        <graphicsAlgorithm cornerHeight="5" cornerWidth="5" height="70" lineWidth="1" style="/0/@styles.124" transparency="0.0" width="106" xsi:type="al:RoundedRectangle"/>
       </children>
       <children visible="true">
-        <graphicsAlgorithm filled="false" font="/0/@fonts.1" height="74" horizontalAlignment="ALIGNMENT_CENTER" lineVisible="true" lineWidth="1" style="/0/@styles.125" transparency="0.0" value="Atualizar ficha de treinamento" width="95" x="5" xsi:type="al:MultiText" y="5"/>
+        <graphicsAlgorithm filled="false" font="/0/@fonts.1" height="60" horizontalAlignment="ALIGNMENT_CENTER" lineVisible="true" lineWidth="1" style="/0/@styles.125" transparency="0.0" value="Atualizar ficha de treinamento" width="96" x="5" xsi:type="al:MultiText" y="5"/>
       </children>
       <children visible="true">
         <graphicsAlgorithm height="16" id="com.totvs.tds.ecm.designer.task.service" lineWidth="1" proportional="false" stretchH="false" stretchV="false" transparency="0.0" width="16" x="5" xsi:type="al:Image" y="5"/>
       </children>
     </children>
     <children active="true" visible="true" xsi:type="pi:ContainerShape">
-      <graphicsAlgorithm filled="false" height="56" lineVisible="false" lineWidth="1" transparency="0.0" width="105" x="1750" xsi:type="al:Rectangle" y="1110"/>
+      <graphicsAlgorithm filled="false" height="56" lineVisible="false" lineWidth="1" transparency="0.0" width="106" x="1750" xsi:type="al:Rectangle" y="1110"/>
       <link businessObjects="task40"/>
       <anchors incomingConnections="/0/@connections.13" outgoingConnections="/0/@connections.14" xsi:type="pi:ChopboxAnchor"/>
       <anchors active="true" referencedGraphicsAlgorithm="/0/@children.16/@graphicsAlgorithm" relativeHeight="0.51" relativeWidth="1.0" visible="true" xsi:type="pi:BoxRelativeAnchor">
         <graphicsAlgorithm filled="false" lineVisible="false" xsi:type="al:Ellipse"/>
       </anchors>
       <children visible="true">
-        <graphicsAlgorithm cornerHeight="5" cornerWidth="5" height="56" lineWidth="1" style="/0/@styles.129" transparency="0.0" width="105" xsi:type="al:RoundedRectangle"/>
+        <graphicsAlgorithm cornerHeight="5" cornerWidth="5" height="56" lineWidth="1" style="/0/@styles.129" transparency="0.0" width="106" xsi:type="al:RoundedRectangle"/>
       </children>
       <children visible="true">
-        <graphicsAlgorithm filled="false" font="/0/@fonts.1" height="46" horizontalAlignment="ALIGNMENT_CENTER" lineVisible="true" lineWidth="1" style="/0/@styles.130" transparency="0.0" value="Tratar erro" width="95" x="5" xsi:type="al:MultiText" y="5"/>
+        <graphicsAlgorithm filled="false" font="/0/@fonts.1" height="46" horizontalAlignment="ALIGNMENT_CENTER" lineVisible="true" lineWidth="1" style="/0/@styles.130" transparency="0.0" value="Tratar erro" width="96" x="5" xsi:type="al:MultiText" y="5"/>
       </children>
     </children>
     <children active="true" visible="true" xsi:type="pi:ContainerShape">
@@ -3725,7 +3725,7 @@
     <fonts name="Arial" size="8"/>
     <fonts bold="true" name="Arial" size="8"/>
   </pi:Diagram>
-  <bpmn2:BpmnProcess author="" cardIndex="TRN-007" category="Treinamento" complementsLevel="1" descriptorFields="&lt;list&gt;&#10;  &lt;org.eclipse.bpmn2.impl.BpmnProcessFormField&gt;&#10;    &lt;id&gt;campoDescritor&lt;/id&gt;&#10;    &lt;label&gt;campoDescritor&lt;/label&gt;&#10;    &lt;cardIndex&gt;TRN-007&lt;/cardIndex&gt;&#10;  &lt;/org.eclipse.bpmn2.impl.BpmnProcessFormField&gt;&#10;&lt;/list&gt;" expedient="Default" extendedFields="&lt;list&gt;&#10;  &lt;org.eclipse.bpmn2.impl.ExtendedPropertyImpl&gt;&#10;    &lt;propertyName&gt;loginUserWS&lt;/propertyName&gt;&#10;    &lt;propertyType&gt;0&lt;/propertyType&gt;&#10;    &lt;propertyDescription&gt;loginUserWS&lt;/propertyDescription&gt;&#10;    &lt;propertyValue&gt;servico&lt;/propertyValue&gt;&#10;    &lt;isDefaultProperty&gt;false&lt;/isDefaultProperty&gt;&#10;  &lt;/org.eclipse.bpmn2.impl.ExtendedPropertyImpl&gt;&#10;  &lt;org.eclipse.bpmn2.impl.ExtendedPropertyImpl&gt;&#10;    &lt;propertyName&gt;matUserWS&lt;/propertyName&gt;&#10;    &lt;propertyType&gt;0&lt;/propertyType&gt;&#10;    &lt;propertyDescription&gt;matUserWS&lt;/propertyDescription&gt;&#10;    &lt;propertyValue&gt;0000&lt;/propertyValue&gt;&#10;    &lt;isDefaultProperty&gt;false&lt;/isDefaultProperty&gt;&#10;  &lt;/org.eclipse.bpmn2.impl.ExtendedPropertyImpl&gt;&#10;  &lt;org.eclipse.bpmn2.impl.ExtendedPropertyImpl&gt;&#10;    &lt;propertyName&gt;passwdUserWS&lt;/propertyName&gt;&#10;    &lt;propertyType&gt;0&lt;/propertyType&gt;&#10;    &lt;propertyDescription&gt;passwdUserWS&lt;/propertyDescription&gt;&#10;    &lt;propertyValue&gt;fcea920f7412b5da7be0cf42b8c93759&lt;/propertyValue&gt;&#10;    &lt;isDefaultProperty&gt;false&lt;/isDefaultProperty&gt;&#10;  &lt;/org.eclipse.bpmn2.impl.ExtendedPropertyImpl&gt;&#10;&lt;/list&gt;" formSource="local" id="TRN-007" instruction="" keyWord="" name="Avaliar Treinamento - Efic&#225;cia" notifyRequisitionerComplements="true" notifyResponsibleComplements="true" serverId="Fluig Test" version="17" volume="Default"/>
+  <bpmn2:BpmnProcess author="" cardIndex="TRN-007" category="Treinamento" complementsLevel="1" descriptorFields="&lt;list&gt;&#10;  &lt;org.eclipse.bpmn2.impl.BpmnProcessFormField&gt;&#10;    &lt;id&gt;campoDescritor&lt;/id&gt;&#10;    &lt;label&gt;campoDescritor&lt;/label&gt;&#10;    &lt;cardIndex&gt;TRN-007&lt;/cardIndex&gt;&#10;  &lt;/org.eclipse.bpmn2.impl.BpmnProcessFormField&gt;&#10;&lt;/list&gt;" expedient="Default" extendedFields="&lt;list&gt;&#10;  &lt;org.eclipse.bpmn2.impl.ExtendedPropertyImpl&gt;&#10;    &lt;propertyName&gt;loginUserWS&lt;/propertyName&gt;&#10;    &lt;propertyType&gt;0&lt;/propertyType&gt;&#10;    &lt;propertyDescription&gt;loginUserWS&lt;/propertyDescription&gt;&#10;    &lt;propertyValue&gt;servico&lt;/propertyValue&gt;&#10;    &lt;isDefaultProperty&gt;false&lt;/isDefaultProperty&gt;&#10;  &lt;/org.eclipse.bpmn2.impl.ExtendedPropertyImpl&gt;&#10;  &lt;org.eclipse.bpmn2.impl.ExtendedPropertyImpl&gt;&#10;    &lt;propertyName&gt;matUserWS&lt;/propertyName&gt;&#10;    &lt;propertyType&gt;0&lt;/propertyType&gt;&#10;    &lt;propertyDescription&gt;matUserWS&lt;/propertyDescription&gt;&#10;    &lt;propertyValue&gt;0000&lt;/propertyValue&gt;&#10;    &lt;isDefaultProperty&gt;false&lt;/isDefaultProperty&gt;&#10;  &lt;/org.eclipse.bpmn2.impl.ExtendedPropertyImpl&gt;&#10;  &lt;org.eclipse.bpmn2.impl.ExtendedPropertyImpl&gt;&#10;    &lt;propertyName&gt;passwdUserWS&lt;/propertyName&gt;&#10;    &lt;propertyType&gt;0&lt;/propertyType&gt;&#10;    &lt;propertyDescription&gt;passwdUserWS&lt;/propertyDescription&gt;&#10;    &lt;propertyValue&gt;fcea920f7412b5da7be0cf42b8c93759&lt;/propertyValue&gt;&#10;    &lt;isDefaultProperty&gt;false&lt;/isDefaultProperty&gt;&#10;  &lt;/org.eclipse.bpmn2.impl.ExtendedPropertyImpl&gt;&#10;&lt;/list&gt;" formSource="local" id="TRN-007" instruction="" keyWord="" name="Avaliar Treinamento - Efic&#225;cia" notifyRequisitionerComplements="true" notifyResponsibleComplements="true" serverId="Fluig Test" version="19" volume="Default"/>
   <bpmn2:BpmnProcess author="" cardIndex="TRN-007" category="Treinamento" complementsLevel="1" descriptorFields="&lt;list&gt;&#10;  &lt;org.eclipse.bpmn2.impl.BpmnProcessFormField&gt;&#10;    &lt;id&gt;campoDescritor&lt;/id&gt;&#10;    &lt;label&gt;campoDescritor&lt;/label&gt;&#10;    &lt;cardIndex&gt;TRN-007&lt;/cardIndex&gt;&#10;  &lt;/org.eclipse.bpmn2.impl.BpmnProcessFormField&gt;&#10;&lt;/list&gt;" expedient="Default" extendedFields="&lt;list/&gt;" formSource="local" id="TRN-007" instruction="" keyWord="" name="Avaliar Treinamento - Efic&#225;cia" notifyRequisitionerComplements="true" notifyResponsibleComplements="true" serverId="Fluig Test" version="3" volume="Default"/>
   <bpmn2:BpmnSwimLane cores="DFDFDF" id="bpmnswimlane1" name="Avaliador"/>
   <bpmn2:BpmnSwimLane cores="C0C7CC" id="bpmnswimlane2" name="Recursos Humanos"/>

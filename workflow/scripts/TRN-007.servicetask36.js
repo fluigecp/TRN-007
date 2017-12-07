@@ -43,11 +43,11 @@ function servicetask36(attempt, message) {
 		 */
 
 		var anoTreinamento = hAPI.getCardValue("dataInicio");
-		anoTreinamento = anoTreinamento.substr(anoTreinamento.length - 4);
+		anoTreinamento = anoTreinamento.substr(anoTreinamento.indexOf("/", 3) + 1);
 
 		// Array que armazena os valores de cada campo de participante
 		var arrayCardValuesAvaliacao = [
-			hAPI.getCardValue("numSolicTreinamento"),
+			hAPI.getCardValue("numProcess"),
 			hAPI.getCardValue("nomeCurso"),
 			anoTreinamento,
 			hAPI.getCardValue("dataInicio"),
