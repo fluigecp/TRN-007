@@ -26,7 +26,7 @@
     <processDefinitionVersionPK>
       <companyId>1</companyId>
       <processId>Avaliar Treinamento - Eficácia</processId>
-      <version>13</version>
+      <version>14</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
     <formId>0</formId>
@@ -474,7 +474,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>1</expressionOrder>
-        <version>13</version>
+        <version>14</version>
         <sequence>8</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;aberturaAutomatica&quot;) == &quot;Sim&quot;</condition>
@@ -486,7 +486,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>2</expressionOrder>
-        <version>13</version>
+        <version>14</version>
         <sequence>8</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;aberturaAutomatica&quot;) != &quot;Sim&quot;</condition>
@@ -497,7 +497,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>1</expressionOrder>
-        <version>13</version>
+        <version>14</version>
         <sequence>10</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;usuarioParticipou&quot;) == &quot;Sim&quot;</condition>
@@ -508,7 +508,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>2</expressionOrder>
-        <version>13</version>
+        <version>14</version>
         <sequence>10</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;usuarioParticipou&quot;) == &quot;Não&quot;</condition>
@@ -519,7 +519,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>1</expressionOrder>
-        <version>13</version>
+        <version>14</version>
         <sequence>25</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;aprovarAvaliacaoRH&quot;) == &quot;Sim&quot;</condition>
@@ -530,7 +530,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>2</expressionOrder>
-        <version>13</version>
+        <version>14</version>
         <sequence>25</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;aprovarAvaliacaoRH&quot;) != &quot;Sim&quot;</condition>
@@ -734,7 +734,35 @@
   </list>
   <list/>
   <list/>
-  <list/>
+  <list>
+    <AdvancedProcessProperties>
+      <advancedProcessPropertiesPK>
+        <companyId>1</companyId>
+        <processId>TRN-007</processId>
+        <propertyId>loginUserWS</propertyId>
+        <version>14</version>
+      </advancedProcessPropertiesPK>
+      <propertieValue>servico</propertieValue>
+    </AdvancedProcessProperties>
+    <AdvancedProcessProperties>
+      <advancedProcessPropertiesPK>
+        <companyId>1</companyId>
+        <processId>TRN-007</processId>
+        <propertyId>matUserWS</propertyId>
+        <version>14</version>
+      </advancedProcessPropertiesPK>
+      <propertieValue>0000</propertieValue>
+    </AdvancedProcessProperties>
+    <AdvancedProcessProperties>
+      <advancedProcessPropertiesPK>
+        <companyId>1</companyId>
+        <processId>TRN-007</processId>
+        <propertyId>passwdUserWS</propertyId>
+        <version>14</version>
+      </advancedProcessPropertiesPK>
+      <propertieValue>fcea920f7412b5da7be0cf42b8c93759</propertieValue>
+    </AdvancedProcessProperties>
+  </list>
   <list>
     <SwimLane>
       <color>DFDFDF</color>
@@ -792,7 +820,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>13</version>
+        <version>14</version>
         <linkSequence>14</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -803,7 +831,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>13</version>
+        <version>14</version>
         <linkSequence>29</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -814,7 +842,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>13</version>
+        <version>14</version>
         <linkSequence>29</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -825,7 +853,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>13</version>
+        <version>14</version>
         <linkSequence>29</linkSequence>
         <bendSequence>3</bendSequence>
       </processLinkBendPK>
@@ -836,7 +864,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>13</version>
+        <version>14</version>
         <linkSequence>30</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -847,7 +875,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>13</version>
+        <version>14</version>
         <linkSequence>31</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -858,7 +886,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>13</version>
+        <version>14</version>
         <linkSequence>32</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -867,7 +895,47 @@
     </ProcessLinkBend>
   </list>
   <list/>
-  <list/>
+  <list>
+    <ExtendedPropertyField>
+      <extendedPropertyFieldPK>
+        <companyId>1</companyId>
+        <processId>TRN-007</processId>
+        <version>14</version>
+        <stateSequence>0</stateSequence>
+        <propertyName>loginUserWS</propertyName>
+      </extendedPropertyFieldPK>
+      <propertyType>0</propertyType>
+      <propertyDescription>loginUserWS</propertyDescription>
+      <propertyValue>servico</propertyValue>
+      <isDefaultProperty>false</isDefaultProperty>
+    </ExtendedPropertyField>
+    <ExtendedPropertyField>
+      <extendedPropertyFieldPK>
+        <companyId>1</companyId>
+        <processId>TRN-007</processId>
+        <version>14</version>
+        <stateSequence>0</stateSequence>
+        <propertyName>matUserWS</propertyName>
+      </extendedPropertyFieldPK>
+      <propertyType>0</propertyType>
+      <propertyDescription>matUserWS</propertyDescription>
+      <propertyValue>0000</propertyValue>
+      <isDefaultProperty>false</isDefaultProperty>
+    </ExtendedPropertyField>
+    <ExtendedPropertyField>
+      <extendedPropertyFieldPK>
+        <companyId>1</companyId>
+        <processId>TRN-007</processId>
+        <version>14</version>
+        <stateSequence>0</stateSequence>
+        <propertyName>passwdUserWS</propertyName>
+      </extendedPropertyFieldPK>
+      <propertyType>0</propertyType>
+      <propertyDescription>passwdUserWS</propertyDescription>
+      <propertyValue>fcea920f7412b5da7be0cf42b8c93759</propertyValue>
+      <isDefaultProperty>false</isDefaultProperty>
+    </ExtendedPropertyField>
+  </list>
   <list>
     <ProcessFormField>
       <processFormFieldPK>
