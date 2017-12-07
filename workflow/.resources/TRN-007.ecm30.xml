@@ -303,6 +303,153 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <version>1</version>
+        <sequence>36</sequence>
+      </processStatePK>
+      <stateName>Atualizar ficha de treinamento</stateName>
+      <stateDescription>Atualizar ficha de treinamento</stateDescription>
+      <instruction></instruction>
+      <deadlineTime>0</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <selectColleague>0</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
+      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>1750</positionX>
+      <positionY>873</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>82</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <executionType>1</executionType>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>TRN-007</processId>
+        <version>1</version>
+        <sequence>40</sequence>
+      </processStatePK>
+      <stateName>Tratar erro</stateName>
+      <stateDescription>Tratar erro</stateDescription>
+      <instruction></instruction>
+      <deadlineTime>0</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Pool Grupo</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;Processos&lt;/Group&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <selectColleague>0</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
+      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>1750</positionX>
+      <positionY>1110</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>80</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <executionType>0</executionType>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>TRN-007</processId>
+        <version>1</version>
+        <sequence>39</sequence>
+      </processStatePK>
+      <stateName>Intermediário</stateName>
+      <stateDescription>Intermediário</stateDescription>
+      <instruction>Evento intermediário do processo</instruction>
+      <deadlineTime>0</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId></engineAllocationId>
+      <engineAllocationConfiguration></engineAllocationConfiguration>
+      <selectColleague>0</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>1</allowanceAuthorityTime>
+      <frequenceAuthorityTime>1</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>1740</positionX>
+      <positionY>937</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>43</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <parentSequence>36</parentSequence>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>TRN-007</processId>
+        <version>1</version>
         <sequence>8</sequence>
       </processStatePK>
       <stateName>Abertura automática?</stateName>
@@ -449,8 +596,8 @@
       <notifyAuthorityFollowUp>false</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>1650</positionX>
-      <positionY>458</positionY>
+      <positionX>1940</positionX>
+      <positionY>898</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -523,7 +670,7 @@
         <sequence>25</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;aprovarAvaliacaoRH&quot;) == &quot;Sim&quot;</condition>
-      <destinationSequenceId>27</destinationSequenceId>
+      <destinationSequenceId>0</destinationSequenceId>
     </ConditionProcessState>
     <ConditionProcessState>
       <conditionProcessStatePK>
@@ -655,22 +802,6 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <version>1</version>
-        <linkSequence>28</linkSequence>
-      </processLinkPK>
-      <actionLabel></actionLabel>
-      <returnPermited>false</returnPermited>
-      <initialStateSequence>25</initialStateSequence>
-      <finalStateSequence>27</finalStateSequence>
-      <returnLabel></returnLabel>
-      <name></name>
-      <automaticLink>false</automaticLink>
-      <type>0</type>
-    </ProcessLink>
-    <ProcessLink>
-      <processLinkPK>
-        <companyId>1</companyId>
-        <processId>TRN-007</processId>
-        <version>1</version>
         <linkSequence>29</linkSequence>
       </processLinkPK>
       <actionLabel></actionLabel>
@@ -731,9 +862,92 @@
       <automaticLink>false</automaticLink>
       <type>0</type>
     </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>TRN-007</processId>
+        <version>1</version>
+        <linkSequence>37</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>36</initialStateSequence>
+      <finalStateSequence>27</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>TRN-007</processId>
+        <version>1</version>
+        <linkSequence>38</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>25</initialStateSequence>
+      <finalStateSequence>36</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>TRN-007</processId>
+        <version>1</version>
+        <linkSequence>41</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>39</initialStateSequence>
+      <finalStateSequence>40</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>TRN-007</processId>
+        <version>1</version>
+        <linkSequence>42</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>40</initialStateSequence>
+      <finalStateSequence>36</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <type>0</type>
+    </ProcessLink>
   </list>
   <list/>
-  <list/>
+  <list>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>servicetask36</eventId>
+        <processId>TRN-007</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>function servicetask36(attempt, message) {
+ try {
+	 var Service = ServiceManager.getService(&apos;ECMCardService&apos;);
+	 var serviceHelper = Service.getBean();
+  //var serviceLocator = serviceHelper.instantiate(&apos;classe.locator&apos;);
+ } catch(error) { 
+	log.error(error);
+	throw error;
+ }
+}</eventDescription>
+    </WorkflowProcessEvent>
+  </list>
   <list>
     <AdvancedProcessProperties>
       <advancedProcessPropertiesPK>
@@ -767,7 +981,7 @@
     <SwimLane>
       <color>DFDFDF</color>
       <height>211</height>
-      <width>1691</width>
+      <width>2151</width>
       <positionX>30</positionX>
       <positionY>150</positionY>
       <stateName>Avaliador</stateName>
@@ -783,7 +997,7 @@
     <SwimLane>
       <color>C0C7CC</color>
       <height>231</height>
-      <width>1691</width>
+      <width>2151</width>
       <positionX>30</positionX>
       <positionY>360</positionY>
       <stateName>Recursos Humanos</stateName>
@@ -799,7 +1013,7 @@
     <SwimLane>
       <color>DFDFDF</color>
       <height>211</height>
-      <width>1691</width>
+      <width>2151</width>
       <positionX>30</positionX>
       <positionY>590</positionY>
       <stateName>Gerência Área</stateName>
@@ -810,6 +1024,38 @@
         <processId>TRN-007</processId>
         <version>1</version>
         <sequence>3</sequence>
+      </swimLanePK>
+    </SwimLane>
+    <SwimLane>
+      <color>DFDFDF</color>
+      <height>211</height>
+      <width>2151</width>
+      <positionX>30</positionX>
+      <positionY>1030</positionY>
+      <stateName>Processos</stateName>
+      <type>2</type>
+      <parentSequence>0</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>TRN-007</processId>
+        <version>1</version>
+        <sequence>4</sequence>
+      </swimLanePK>
+    </SwimLane>
+    <SwimLane>
+      <color>C0C7CC</color>
+      <height>231</height>
+      <width>2151</width>
+      <positionX>30</positionX>
+      <positionY>800</positionY>
+      <stateName>Recursos Humanos</stateName>
+      <type>2</type>
+      <parentSequence>0</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>TRN-007</processId>
+        <version>1</version>
+        <sequence>5</sequence>
       </swimLanePK>
     </SwimLane>
   </list>
@@ -893,6 +1139,39 @@
       <positionX>1372</positionX>
       <positionY>693</positionY>
     </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>TRN-007</processId>
+        <version>14</version>
+        <linkSequence>38</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>1800</positionX>
+      <positionY>473</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>TRN-007</processId>
+        <version>14</version>
+        <linkSequence>41</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>1693</positionX>
+      <positionY>951</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>TRN-007</processId>
+        <version>14</version>
+        <linkSequence>41</linkSequence>
+        <bendSequence>2</bendSequence>
+      </processLinkBendPK>
+      <positionX>1693</positionX>
+      <positionY>1136</positionY>
+    </ProcessLinkBend>
   </list>
   <list/>
   <list>
@@ -947,6 +1226,16 @@
       <slotId>1</slotId>
     </ProcessFormField>
   </list>
-  <list/>
+  <list>
+    <ProcessStateService>
+      <companyId>1</companyId>
+      <processId>TRN-007</processId>
+      <version>1</version>
+      <sequence>36</sequence>
+      <attempts>0</attempts>
+      <sucessFullMessage></sucessFullMessage>
+      <serviceName>ECMCardService</serviceName>
+    </ProcessStateService>
+  </list>
   <list/>
 </list>
