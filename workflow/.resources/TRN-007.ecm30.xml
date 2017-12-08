@@ -26,7 +26,7 @@
     <processDefinitionVersionPK>
       <companyId>1</companyId>
       <processId>Avaliar Treinamento - Eficácia</processId>
-      <version>19</version>
+      <version>20</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
     <formId>0</formId>
@@ -621,7 +621,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>1</expressionOrder>
-        <version>19</version>
+        <version>20</version>
         <sequence>8</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;aberturaAutomatica&quot;) == &quot;Sim&quot;</condition>
@@ -633,7 +633,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>2</expressionOrder>
-        <version>19</version>
+        <version>20</version>
         <sequence>8</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;aberturaAutomatica&quot;) != &quot;Sim&quot;</condition>
@@ -644,7 +644,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>1</expressionOrder>
-        <version>19</version>
+        <version>20</version>
         <sequence>10</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;usuarioParticipou&quot;) == &quot;Sim&quot;</condition>
@@ -655,7 +655,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>2</expressionOrder>
-        <version>19</version>
+        <version>20</version>
         <sequence>10</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;usuarioParticipou&quot;) == &quot;Não&quot;</condition>
@@ -666,7 +666,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>1</expressionOrder>
-        <version>19</version>
+        <version>20</version>
         <sequence>25</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;aprovarAvaliacaoRH&quot;) == &quot;Sim&quot;</condition>
@@ -677,7 +677,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>2</expressionOrder>
-        <version>19</version>
+        <version>20</version>
         <sequence>25</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;aprovarAvaliacaoRH&quot;) != &quot;Sim&quot;</condition>
@@ -938,6 +938,9 @@
       </workflowProcessEventPK>
       <eventDescription>function servicetask36(attempt, message) {&#xd;
 	try {&#xd;
+		var numSolicitacao = hAPI.getCardValue(&quot;numProcess&quot;);&#xd;
+		log.warn(&apos;%%%%%% numSolicitacao: &apos; + numSolicitacao);&#xd;
+&#xd;
 		var Service = ServiceManager.getService(&apos;ECMCardService&apos;);&#xd;
 		log.warn(&apos;%%%%%% Service: &apos; + Service);&#xd;
 &#xd;
@@ -963,7 +966,7 @@
 		log.warn(&apos;%%%%%% empresa: &apos; + empresa + &apos; TypeOf: &apos; + typeof empresa);&#xd;
 &#xd;
 		// INICIANDO A IMPLEMENTAÇÃO DA INTEGRAÇÃO COM A FICHA DO PARTICIPANTE&#xd;
-		&#xd;
+&#xd;
 		// Obtém matricula do participante&#xd;
 		var matricula = hAPI.getCardValue(&quot;matParticipante&quot;);&#xd;
 &#xd;
@@ -1014,10 +1017,12 @@
 				cardFieldDtoArray.getItem().add(cardFieldDto);&#xd;
 			}&#xd;
 &#xd;
-			// objeto array que irá armazenar objetos CardFieldDto&#xd;
-			log.warn(&apos;%%%%%% atualizando ficha &apos;);&#xd;
-			portServico.updateCardData(empresa, user, password, documentid, cardFieldDtoArray);&#xd;
-			log.warn(&apos;%%%%%% ficha atualizada &apos;);&#xd;
+			// updating ficha&#xd;
+			if ( !checkIfAvaliacaoIsAlreadyRegistered(documentid, numSolicitacao) ) {&#xd;
+				log.warn(&apos;%%%%%% atualizando ficha &apos;);&#xd;
+				portServico.updateCardData(empresa, user, password, documentid, cardFieldDtoArray);&#xd;
+				log.warn(&apos;%%%%%% ficha atualizada &apos;);&#xd;
+			}&#xd;
 		}&#xd;
 	} catch (error) {&#xd;
 		log.error(error);&#xd;
@@ -1065,6 +1070,26 @@ function getAvaliacoesEficaciaCount(documentid) {&#xd;
 	var fichaParticipante = DatasetFactory.getDataset(&quot;participante_x_treinamento&quot;, null, [c1, c2, tablename], null);&#xd;
 	return fichaParticipante.rowsCount;&#xd;
 }&#xd;
+&#xd;
+/**&#xd;
+ * @description Verifica se a avaliação já foi inserido na table de avaliação de reação do participante.&#xd;
+ * @param {number} docId - documentid da Ficha do participante&#xd;
+ * @param {number} numSolic - Número da solicitação da avaliação de reação&#xd;
+ * @returns - Boolean - true caso já exista, false caso ainda não exista.&#xd;
+ * &#xd;
+ */&#xd;
+function checkIfAvaliacaoIsAlreadyRegistered(docId, numSolic) {&#xd;
+	var c1 = DatasetFactory.createConstraint(&quot;metadata#active&quot;, true, true, ConstraintType.MUST);&#xd;
+	var c2 = DatasetFactory.createConstraint(&quot;documentid&quot;, docId, docId, ConstraintType.MUST);&#xd;
+	var tablename = DatasetFactory.createConstraint(&quot;tablename&quot;, &quot;avaliacoes_eficacia&quot;, &quot;avaliacoes_eficacia&quot;, ConstraintType.MUST);&#xd;
+	var fichaParticipante = DatasetFactory.getDataset(&quot;participante_x_treinamento&quot;, null, [c1, c2, tablename], null);&#xd;
+	for (var i = 0; i &lt; fichaParticipante.rowsCount; i++) {&#xd;
+		if (fichaParticipante.getValue(i, &quot;numero_solicitacao_tb3&quot;) == numSolic) {&#xd;
+			return true;&#xd;
+		}&#xd;
+	}&#xd;
+	return false;&#xd;
+}&#xd;
 </eventDescription>
     </WorkflowProcessEvent>
   </list>
@@ -1074,7 +1099,7 @@ function getAvaliacoesEficaciaCount(documentid) {&#xd;
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <propertyId>loginUserWS</propertyId>
-        <version>19</version>
+        <version>20</version>
       </advancedProcessPropertiesPK>
       <propertieValue>servico</propertieValue>
     </AdvancedProcessProperties>
@@ -1083,7 +1108,7 @@ function getAvaliacoesEficaciaCount(documentid) {&#xd;
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <propertyId>matUserWS</propertyId>
-        <version>19</version>
+        <version>20</version>
       </advancedProcessPropertiesPK>
       <propertieValue>0000</propertieValue>
     </AdvancedProcessProperties>
@@ -1092,7 +1117,7 @@ function getAvaliacoesEficaciaCount(documentid) {&#xd;
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <propertyId>passwdUserWS</propertyId>
-        <version>19</version>
+        <version>20</version>
       </advancedProcessPropertiesPK>
       <propertieValue>fcea920f7412b5da7be0cf42b8c93759</propertieValue>
     </AdvancedProcessProperties>
@@ -1186,7 +1211,7 @@ function getAvaliacoesEficaciaCount(documentid) {&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>19</version>
+        <version>20</version>
         <linkSequence>14</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1197,7 +1222,7 @@ function getAvaliacoesEficaciaCount(documentid) {&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>19</version>
+        <version>20</version>
         <linkSequence>29</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1208,7 +1233,7 @@ function getAvaliacoesEficaciaCount(documentid) {&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>19</version>
+        <version>20</version>
         <linkSequence>29</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -1219,7 +1244,7 @@ function getAvaliacoesEficaciaCount(documentid) {&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>19</version>
+        <version>20</version>
         <linkSequence>29</linkSequence>
         <bendSequence>3</bendSequence>
       </processLinkBendPK>
@@ -1230,7 +1255,7 @@ function getAvaliacoesEficaciaCount(documentid) {&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>19</version>
+        <version>20</version>
         <linkSequence>30</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1241,7 +1266,7 @@ function getAvaliacoesEficaciaCount(documentid) {&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>19</version>
+        <version>20</version>
         <linkSequence>31</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1252,7 +1277,7 @@ function getAvaliacoesEficaciaCount(documentid) {&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>19</version>
+        <version>20</version>
         <linkSequence>32</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1263,7 +1288,7 @@ function getAvaliacoesEficaciaCount(documentid) {&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>19</version>
+        <version>20</version>
         <linkSequence>38</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1274,7 +1299,7 @@ function getAvaliacoesEficaciaCount(documentid) {&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>19</version>
+        <version>20</version>
         <linkSequence>41</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1285,7 +1310,7 @@ function getAvaliacoesEficaciaCount(documentid) {&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>19</version>
+        <version>20</version>
         <linkSequence>41</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -1299,7 +1324,7 @@ function getAvaliacoesEficaciaCount(documentid) {&#xd;
       <extendedPropertyFieldPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>19</version>
+        <version>20</version>
         <stateSequence>0</stateSequence>
         <propertyName>loginUserWS</propertyName>
       </extendedPropertyFieldPK>
@@ -1312,7 +1337,7 @@ function getAvaliacoesEficaciaCount(documentid) {&#xd;
       <extendedPropertyFieldPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>19</version>
+        <version>20</version>
         <stateSequence>0</stateSequence>
         <propertyName>matUserWS</propertyName>
       </extendedPropertyFieldPK>
@@ -1325,7 +1350,7 @@ function getAvaliacoesEficaciaCount(documentid) {&#xd;
       <extendedPropertyFieldPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>19</version>
+        <version>20</version>
         <stateSequence>0</stateSequence>
         <propertyName>passwdUserWS</propertyName>
       </extendedPropertyFieldPK>
