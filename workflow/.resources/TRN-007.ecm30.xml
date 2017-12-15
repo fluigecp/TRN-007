@@ -326,7 +326,7 @@
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
       <positionX>1750</positionX>
-      <positionY>873</positionY>
+      <positionY>880</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -428,7 +428,7 @@
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
       <positionX>1740</positionX>
-      <positionY>937</positionY>
+      <positionY>944</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -596,8 +596,8 @@
       <notifyAuthorityFollowUp>false</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>1940</positionX>
-      <positionY>898</positionY>
+      <positionX>2020</positionX>
+      <positionY>900</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -713,7 +713,7 @@
       <initialStateSequence>8</initialStateSequence>
       <finalStateSequence>9</finalStateSequence>
       <returnLabel></returnLabel>
-      <name></name>
+      <name>Sim</name>
       <automaticLink>false</automaticLink>
       <type>0</type>
     </ProcessLink>
@@ -729,7 +729,7 @@
       <initialStateSequence>8</initialStateSequence>
       <finalStateSequence>7</finalStateSequence>
       <returnLabel></returnLabel>
-      <name></name>
+      <name>Não</name>
       <automaticLink>false</automaticLink>
       <type>0</type>
     </ProcessLink>
@@ -761,7 +761,7 @@
       <initialStateSequence>10</initialStateSequence>
       <finalStateSequence>11</finalStateSequence>
       <returnLabel></returnLabel>
-      <name></name>
+      <name>Não</name>
       <automaticLink>false</automaticLink>
       <type>0</type>
     </ProcessLink>
@@ -777,7 +777,7 @@
       <initialStateSequence>10</initialStateSequence>
       <finalStateSequence>7</finalStateSequence>
       <returnLabel></returnLabel>
-      <name></name>
+      <name>Sim</name>
       <automaticLink>false</automaticLink>
       <type>0</type>
     </ProcessLink>
@@ -809,7 +809,7 @@
       <initialStateSequence>25</initialStateSequence>
       <finalStateSequence>7</finalStateSequence>
       <returnLabel></returnLabel>
-      <name></name>
+      <name>Não</name>
       <automaticLink>false</automaticLink>
       <type>0</type>
     </ProcessLink>
@@ -874,7 +874,7 @@
       <initialStateSequence>36</initialStateSequence>
       <finalStateSequence>27</finalStateSequence>
       <returnLabel></returnLabel>
-      <name></name>
+      <name>Ficha atualizada</name>
       <automaticLink>false</automaticLink>
       <type>0</type>
     </ProcessLink>
@@ -890,7 +890,7 @@
       <initialStateSequence>25</initialStateSequence>
       <finalStateSequence>36</finalStateSequence>
       <returnLabel></returnLabel>
-      <name></name>
+      <name>Sim</name>
       <automaticLink>false</automaticLink>
       <type>0</type>
     </ProcessLink>
@@ -1303,8 +1303,8 @@ function checkIfAvaliacaoIsAlreadyRegistered(docId, numSolic) {&#xd;
         <linkSequence>41</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
-      <positionX>1693</positionX>
-      <positionY>951</positionY>
+      <positionX>1692</positionX>
+      <positionY>958</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
@@ -1314,7 +1314,7 @@ function checkIfAvaliacaoIsAlreadyRegistered(docId, numSolic) {&#xd;
         <linkSequence>41</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
-      <positionX>1693</positionX>
+      <positionX>1692</positionX>
       <positionY>1136</positionY>
     </ProcessLinkBend>
   </list>
