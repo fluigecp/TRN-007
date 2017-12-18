@@ -79,14 +79,15 @@ var manipulateDOM = (function () {
             }
 
             if (selectedItem.inputName == "avaliadorTreinamento") {
-                if ( $("#aberturaAutomatica") != "Sim") {
+                /*if ( $("#aberturaAutomatica") != "Sim") {
                     var matricula = $("#matParticipante").val();
                     if ( servicesModule.searchUserMat(matricula) ){
                         $("#avaliadorMat").val(matricula);
                     } else {
                         $("#avaliadorMat").val(selectedItem.colleagueId);
                     }
-                }
+                }*/
+                document.getElementById("avaliadorMat").value = selectedItem.colleagueId;
             }
         },
 
