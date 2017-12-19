@@ -26,7 +26,7 @@
     <processDefinitionVersionPK>
       <companyId>1</companyId>
       <processId>Avaliar Treinamento - Eficácia</processId>
-      <version>20</version>
+      <version>21</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
     <formId>0</formId>
@@ -305,8 +305,8 @@
         <version>1</version>
         <sequence>36</sequence>
       </processStatePK>
-      <stateName>Atualizar ficha de treinamento</stateName>
-      <stateDescription>Atualizar ficha de treinamento</stateDescription>
+      <stateName>Atualizar histórico de avaliações</stateName>
+      <stateDescription>Atualizar histórico de avaliações</stateDescription>
       <instruction></instruction>
       <deadlineTime>0</deadlineTime>
       <joint>false</joint>
@@ -326,7 +326,7 @@
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
       <positionX>1750</positionX>
-      <positionY>880</positionY>
+      <positionY>873</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -428,7 +428,7 @@
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
       <positionX>1740</positionX>
-      <positionY>944</positionY>
+      <positionY>937</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -597,7 +597,7 @@
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
       <positionX>2020</positionX>
-      <positionY>900</positionY>
+      <positionY>898</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -621,7 +621,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>1</expressionOrder>
-        <version>20</version>
+        <version>21</version>
         <sequence>8</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;aberturaAutomatica&quot;) == &quot;Sim&quot;</condition>
@@ -633,7 +633,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>2</expressionOrder>
-        <version>20</version>
+        <version>21</version>
         <sequence>8</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;aberturaAutomatica&quot;) != &quot;Sim&quot;</condition>
@@ -644,7 +644,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>1</expressionOrder>
-        <version>20</version>
+        <version>21</version>
         <sequence>10</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;usuarioParticipou&quot;) == &quot;Sim&quot;</condition>
@@ -655,7 +655,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>2</expressionOrder>
-        <version>20</version>
+        <version>21</version>
         <sequence>10</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;usuarioParticipou&quot;) == &quot;Não&quot;</condition>
@@ -666,7 +666,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>1</expressionOrder>
-        <version>20</version>
+        <version>21</version>
         <sequence>25</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;aprovarAvaliacaoRH&quot;) == &quot;Sim&quot;</condition>
@@ -677,7 +677,7 @@
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <expressionOrder>2</expressionOrder>
-        <version>20</version>
+        <version>21</version>
         <sequence>25</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;aprovarAvaliacaoRH&quot;) != &quot;Sim&quot;</condition>
@@ -1099,7 +1099,7 @@ function checkIfAvaliacaoIsAlreadyRegistered(docId, numSolic) {&#xd;
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <propertyId>loginUserWS</propertyId>
-        <version>20</version>
+        <version>21</version>
       </advancedProcessPropertiesPK>
       <propertieValue>servico</propertieValue>
     </AdvancedProcessProperties>
@@ -1108,7 +1108,7 @@ function checkIfAvaliacaoIsAlreadyRegistered(docId, numSolic) {&#xd;
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <propertyId>matUserWS</propertyId>
-        <version>20</version>
+        <version>21</version>
       </advancedProcessPropertiesPK>
       <propertieValue>0000</propertieValue>
     </AdvancedProcessProperties>
@@ -1117,7 +1117,7 @@ function checkIfAvaliacaoIsAlreadyRegistered(docId, numSolic) {&#xd;
         <companyId>1</companyId>
         <processId>TRN-007</processId>
         <propertyId>passwdUserWS</propertyId>
-        <version>20</version>
+        <version>21</version>
       </advancedProcessPropertiesPK>
       <propertieValue>fcea920f7412b5da7be0cf42b8c93759</propertieValue>
     </AdvancedProcessProperties>
@@ -1211,7 +1211,7 @@ function checkIfAvaliacaoIsAlreadyRegistered(docId, numSolic) {&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>20</version>
+        <version>21</version>
         <linkSequence>14</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1222,7 +1222,7 @@ function checkIfAvaliacaoIsAlreadyRegistered(docId, numSolic) {&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>20</version>
+        <version>21</version>
         <linkSequence>29</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1233,7 +1233,7 @@ function checkIfAvaliacaoIsAlreadyRegistered(docId, numSolic) {&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>20</version>
+        <version>21</version>
         <linkSequence>29</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -1244,7 +1244,7 @@ function checkIfAvaliacaoIsAlreadyRegistered(docId, numSolic) {&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>20</version>
+        <version>21</version>
         <linkSequence>29</linkSequence>
         <bendSequence>3</bendSequence>
       </processLinkBendPK>
@@ -1255,7 +1255,7 @@ function checkIfAvaliacaoIsAlreadyRegistered(docId, numSolic) {&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>20</version>
+        <version>21</version>
         <linkSequence>30</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1266,7 +1266,7 @@ function checkIfAvaliacaoIsAlreadyRegistered(docId, numSolic) {&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>20</version>
+        <version>21</version>
         <linkSequence>31</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1277,7 +1277,7 @@ function checkIfAvaliacaoIsAlreadyRegistered(docId, numSolic) {&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>20</version>
+        <version>21</version>
         <linkSequence>32</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1288,29 +1288,29 @@ function checkIfAvaliacaoIsAlreadyRegistered(docId, numSolic) {&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>20</version>
+        <version>21</version>
         <linkSequence>38</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
-      <positionX>1800</positionX>
-      <positionY>473</positionY>
+      <positionX>1803</positionX>
+      <positionY>474</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>20</version>
+        <version>21</version>
         <linkSequence>41</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
       <positionX>1692</positionX>
-      <positionY>958</positionY>
+      <positionY>951</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>20</version>
+        <version>21</version>
         <linkSequence>41</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -1324,7 +1324,7 @@ function checkIfAvaliacaoIsAlreadyRegistered(docId, numSolic) {&#xd;
       <extendedPropertyFieldPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>20</version>
+        <version>21</version>
         <stateSequence>0</stateSequence>
         <propertyName>loginUserWS</propertyName>
       </extendedPropertyFieldPK>
@@ -1337,7 +1337,7 @@ function checkIfAvaliacaoIsAlreadyRegistered(docId, numSolic) {&#xd;
       <extendedPropertyFieldPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>20</version>
+        <version>21</version>
         <stateSequence>0</stateSequence>
         <propertyName>matUserWS</propertyName>
       </extendedPropertyFieldPK>
@@ -1350,7 +1350,7 @@ function checkIfAvaliacaoIsAlreadyRegistered(docId, numSolic) {&#xd;
       <extendedPropertyFieldPK>
         <companyId>1</companyId>
         <processId>TRN-007</processId>
-        <version>20</version>
+        <version>21</version>
         <stateSequence>0</stateSequence>
         <propertyName>passwdUserWS</propertyName>
       </extendedPropertyFieldPK>
