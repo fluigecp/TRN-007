@@ -43,6 +43,9 @@ function displayFields(form, customHTML) {
 	if (activity != 4) {
 		ocultaClasse("aprovarAvaliacaoContainer");
 	}
+	if ( activity != 23 ) {
+		ocultaClasse("aprovarAvaliacaoRHContainer");
+	}
 
 	if ( activity != 0 && activity != 3 && activity != 9 ) {
 		ocultaClasse("verificarParticipacaoContainer");
@@ -51,12 +54,21 @@ function displayFields(form, customHTML) {
 
 	
 	if ( activity == 0 || activity == 3 || activity == 7 || activity == 9) {
-		if ( form.getValue("aberturaAutomatica") != "Sim" ) {
-			ocultaId("btnShowAvaliacaoReacao");
-			if ( form.getValue("numSolicTreinamento") == "" ) {
-				ocultaId("btnShowTreinamento");
-			}
+		if ( activity != 7 ) {
+			ocultaClasse("pergunta-1-container");
+			ocultaClasse("pergunta-2-container");
+			ocultaClasse("pergunta-3-container");
 		}
+	}
+
+	if ( form.getValue("aberturaAutomatica") != "Sim" ) {
+		ocultaId("btnShowAvaliacaoReacao");
+		if ( form.getValue("numSolicTreinamento") == "") {
+			ocultaId("btnShowTreinamento");
+		}
+	}
+	if ( form.getValue("numSolicTreinamento") == "") {
+		ocultaId("btnShowTreinamento");
 	}
 
 	if ( modo == "VIEW" ) {

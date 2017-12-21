@@ -3,14 +3,10 @@ function validaCampos(atividade, proximaAtividade) {
 
 	if (atividade == 0 || atividade == 3 || atividade == 9) {
 		addHasFree("nomeCurso");
-		addHasFree("data1");
-		addHasFree("data2");
 		addHasFree("nomeParticipante");
 		addHasFree("matParticipante");
-		addHasFree("cargoParticipante");
-		addHasFree("lotacaoParticipante");
 		addHasFree("avaliadorTreinamento");
-		addHasFree("aprovadorTreinamento");
+		addHasFree("responsavelArea");
 		addHasFree("usuarioParticipou");
 		addHasFree("conteudoProgramatico");
 	}
@@ -22,10 +18,17 @@ function validaCampos(atividade, proximaAtividade) {
 		}
 		addHasFree('pergunta2');
 		addHasFree('pergunta3');
+		addHasFree('justificativa2');
+		if ( atividade == 7 ) {
+			addHasFree("dataInicio");
+			addHasFree("dataTermino");
+			addHasFree("cargoParticipante");
+			addHasFree("lotacaoParticipante");
+		}
 	}
 
-	if (atividade == 4) {
-		addHasFree("aprovarAvaliacao");
+	if ( atividade == 23 ) {
+		addHasFree("aprovarAvaliacaoRH");
 	}
 
 	/** Fim Life Cycle Workflow */

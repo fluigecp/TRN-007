@@ -40,6 +40,33 @@ var manipulateDOM = (function () {
                 var htmlRef = "/portal/p/1/pageworkflowview?app_ecm_workflowview_detailsProcessInstanceID=" + numSolic;
                 window.open(htmlRef, "_blank");
             }
+        },
+
+        /**
+         * @description Função listener para verificar se a matrícula do participante está cadastrada no fluig,
+         * caso estiver, o campo avaliador é setado automaticamente com o nome do participante.
+         */
+        checkIfParticipanteHasFluigListener: function () {
+            var matricula = document.getElementById("matParticipante").value;
+            if ( servicesModule.searchUserMat(matricula) ) {
+                var nameMat = servicesModule.findNameByMat(matricula);
+                manipulateDOM.zoomFields.setZoomData("avaliadorTreinamento", nameMat);
+                document.getElementById("avaliadorMat").value = matricula;
+            } else {
+                manipulateDOM.zoomFields.clearZoomData("avaliadorTreinamento");
+                document.getElementById("avaliadorMat").value = "";
+            }    
+        },
+
+        /**
+         * @description Função listener para verificar a lotação do participante
+         */
+        checkLotacaoParticipante: function() {
+            var matricula = document.getElementById("matParticipante").value;
+            var lotacaoName = servicesModule.findLotacaoByMat(matricula);
+            if (lotacaoName != "") {
+                manipulateDOM.zoomFields.setZoomData("lotacaoParticipante", lotacaoName);
+            }
         }
 
     };
@@ -47,21 +74,29 @@ var manipulateDOM = (function () {
     var zoomFields = {
         eventZoom: function (selectedItem) {
 
-            if (selectedItem.inputName == "aprovadorTreinamento") {
-                $("#aprovadorMat").val(selectedItem.colleagueId);
+            if (selectedItem.inputName == "responsavelArea") {
+                $("#responsavelAreaMat").val(selectedItem.colleagueId);
             }
 
             if (selectedItem.inputName == "avaliadorTreinamento") {
-                if ( $("#aberturaAutomatica") != "Sim") {
+                /*if ( $("#aberturaAutomatica") != "Sim") {
                     var matricula = $("#matParticipante").val();
                     if ( servicesModule.searchUserMat(matricula) ){
                         $("#avaliadorMat").val(matricula);
                     } else {
                         $("#avaliadorMat").val(selectedItem.colleagueId);
                     }
-                }
+                }*/
+                document.getElementById("avaliadorMat").value = selectedItem.colleagueId;
             }
+        },
 
+        setZoomData: function(instance, value){
+            window[instance].setValue(value);
+        },
+
+        clearZoomData: function(instance) {
+            window[instance].clear();
         }
     };
 

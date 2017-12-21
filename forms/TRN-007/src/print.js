@@ -33,25 +33,31 @@ var printModule = (function(){
        var formObj, nomeCurso, dataInicio, dataFim, nomeParticipante,
              matParticipante, conteudoProgramatico, cargoParticipante, lotacaoParticipante, avaliadorTreinamento;
         nomeCurso = modo == "VIEW" ? $("span[name*=nomeCurso]").html() : $("input[name*=nomeCurso]").val();
-        dataInicio = modo == "VIEW" ? $("span[name*=data1]").html() : $("input[name*=data1]").val();
-        dataFim = modo == "VIEW" ? $("span[name*=data2]").html() : $("input[name*=data2]").val();
+        dataInicio = modo == "VIEW" ? $("span[name*=dataInicio]").html() : $("input[name*=dataInicio]").val();
+        dataFim = modo == "VIEW" ? $("span[name*=dataTermino]").html() : $("input[name*=dataTermino]").val();
         nomeParticipante = modo == "VIEW" ? $("span[name*=nomeParticipante]").html() : $("input[name*=nomeParticipante]").val();
         matParticipante = modo == "VIEW" ? $("span[name*=matParticipante]").html() : $("input[name*=matParticipante]").val();
         conteudoProgramatico = modo == "VIEW" ? $("span[name*=conteudoProgramatico]").html() : $("textarea[name*=conteudoProgramatico]").val();
         cargoParticipante = modo == "VIEW" ? $("span[name*=cargoParticipante]").html() : $("#cargoParticipante").val();
+        cargoParticipante = cargoParticipante == null ? " " : cargoParticipante; 
         lotacaoParticipante = modo == "VIEW" ? $("span[name*=lotacaoParticipante]").html() : $("#lotacaoParticipante").val();
+        lotacaoParticipante = lotacaoParticipante == null ? " " : lotacaoParticipante;
         avaliadorTreinamento = modo == "VIEW" ? $("span[name*=avaliadorTreinamento]").html() : $("#avaliadorTreinamento").val();
+        avaliadorTreinamento = avaliadorTreinamento == null ? " " : avaliadorTreinamento;
         formObj = {
-            "nomeCurso":nomeCurso,
-            "dataInicio": dataInicio,
-            "dataFim": dataFim,
-            "nomeParticipante": nomeParticipante,
-            "matParticipante": matParticipante,
-            "conteudoProgramatico": conteudoProgramatico.replace(/\n/g, '<br>'),
-            "cargoParticipante": cargoParticipante,
-            "lotacaoParticipante": lotacaoParticipante,
-            "avaliadorTreinamento": avaliadorTreinamento
+            "nomeCurso":nomeCurso + "",
+            "dataInicio": dataInicio + "",
+            "dataFim": dataFim + "",
+            "nomeParticipante": nomeParticipante + "",
+            "matParticipante": matParticipante + "",
+            "conteudoProgramatico": conteudoProgramatico.replace(/\n/g, '<br>') + "",
+            "cargoParticipante": cargoParticipante + "",
+            "lotacaoParticipante": lotacaoParticipante + "",
+            "avaliadorTreinamento": avaliadorTreinamento + ""
         };
+        if ( formObj.conteudoProgramatico == "" ) {
+            formObj.conteudoProgramatico = "<div style='height: 100px;'></div>";
+        }
         return formObj;     
     };
 
@@ -91,6 +97,10 @@ var printModule = (function(){
             var dvHeader = myWindow.document.createElement('div');
             var header = getHeader();
             dvHeader.innerHTML = header;
+            if (list.dataInicio == "" && list.dataFim == "") {
+                list.dataInicio = "__/__/____";
+                list.dataFim = "__/__/____";
+            }
             dvHeader.id = 'aprovacaoEficaciaFormHeader';
             var html =
             '       <div class="row">'+
@@ -233,15 +243,28 @@ var printModule = (function(){
                 '                    </div>'+
                 '                </div>'+
                 '             </div>'+
+                '       </div>'+
+            '       </div>'+
+            
+            '       <div class="row">'+
+                '        <div class="col-md-12">'+
                 '           <div class="form-field" data-type="textarea" data-show-properties="" data-field-name="justificativa1">'+
                 '               <div class="form-input">'+
                 '                   <div class="form-group">'+
                 '                       <label>Justifique para respostas Parcialmente (50%) e Não (menos de 50%)'+
                 '                       </label>'+
-                '                       <div style="padding-top: 100px;"></div>'+
                 '                   </div>'+
                 '               </div>'+
                 '           </div>'+
+                '       </div>'+
+                '       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom: 10px;">'+
+                '            ________________________________________________________________________________________________'+
+                '            ________________________________________________________________________________________________'+
+                '            ________________________________________________________________________________________________'+
+                '            ________________________________________________________________________________________________'+
+                '            ________________________________________________________________________________________________'+
+                '            ________________________________________________________________________________________________'+
+                '            ________________________________________________________________________________________________'+
                 '       </div>'+
             '       </div>'+
 
@@ -268,17 +291,30 @@ var printModule = (function(){
                 '                       </div>'+
                 '                   </div>'+
                 '               </div>'+
+                '           </div>'+
+            '       </div>'+
+
+            '    <div class="row">'+
+                '        <div class="col-md-12">'+
                 '               <div class="form-field" data-type="textarea" data-show-properties="" data-field-name="justificativa2">'+
                 '                   <div class="form-input">'+
                 '                       <div class="form-group">'+
                 '                           <label>Justifique sua resposta'+
                 '                           </label>'+
-                '                           <div style="padding-top: 100px;"></div>'+
                 '                       </div>'+
                 '                   </div>'+
                 '               </div>'+
-                '           </div>'+
-            '       </div>'+
+                '       </div>'+
+                '       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom: 10px;">'+
+                '            ________________________________________________________________________________________________'+
+                '            ________________________________________________________________________________________________'+
+                '            ________________________________________________________________________________________________'+
+                '            ________________________________________________________________________________________________'+
+                '            ________________________________________________________________________________________________'+
+                '            ________________________________________________________________________________________________'+
+                '            ________________________________________________________________________________________________'+
+                '       </div>'+
+            '    </div>'+
 
             '       <div class="row">'+
                 '           <div class="col-md-12">'+
@@ -287,14 +323,25 @@ var printModule = (function(){
                 '                       <div class="form-group">'+
                 '                           <label>3) Descreva os resultados obtidos em relação a situação anterior x situação atual'+
                 '                           </label>'+
-                '                           <div style="padding-top: 100px;"></div>'+
                 '                       </div>'+
                 '                   </div>'+
                 '               </div>'+
                 '           </div>'+
-            '       </div>'+
+                '       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom: 10px;">'+
+                '            ________________________________________________________________________________________________'+
+                '            ________________________________________________________________________________________________'+
+                '            ________________________________________________________________________________________________'+
+                '            ________________________________________________________________________________________________'+
+                '            ________________________________________________________________________________________________'+
+                '            ________________________________________________________________________________________________'+
+                '            ________________________________________________________________________________________________'+
+                '       </div>'+
+                '       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom: 10px;">'+
+                '       Nº Solicitação: '+getProcess()+
+                '       </div>'+
+            '       </div>';
 
-            '       <div class="row">'+
+            /*'       <div class="row">'+
                 '               <div class="col-md-12">'+
                 '                   <table style=" text-align: center; margin-bottom: 20px;">'+
                 '                       <th>'+
@@ -320,7 +367,7 @@ var printModule = (function(){
                 '                   </table>'+
                 '               Nº Solicitação: '+getProcess()+
                 '               </div>'+
-            '       </div>';
+            '       </div>';*/
 
             dvDados.innerHTML = html;
             dvDados.id = 'aprovacaoEficaciaForm';
@@ -330,10 +377,10 @@ var printModule = (function(){
             page.appendChild(dvDados);
             myWindow.document.getElementById("content-pages").appendChild(page);
 
-           setTimeout(function() {
+           /*setTimeout(function() {
                 myWindow.print();
                 myWindow.close(); 
-            }, 1500);
+            }, 1500);*/
 
         }catch(err){
             console.log('Erro na funcao '+ err.message);
